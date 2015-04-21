@@ -1,0 +1,44 @@
+/******************************************************************
+Site Name: 
+Author: Laura Lungu
+
+Stylesheet: Font face Styles
+
+******************************************************************/
+/******************************************************************
+Font-face STYLES
+******************************************************************/
+
+@mixin font-face($font-family, $file-path, $font-weight, $font-style) {
+  @font-face {
+    font-family: $font-family;
+      src: url('#{$file-path}.eot');
+      src: url('#{$file-path}.eot?#iefix') format('embedded-opentype'),
+           url('#{$file-path}.woff') format('woff'),
+           url('#{$file-path}.ttf') format('truetype'),
+           url('#{$file-path}.svg##{$font-family}') format('svg');
+    font-weight: $font-weight;
+    font-style: $font-style;
+  }
+  // Chrome for Windows rendering fix: http://www.adtrak.co.uk/blog/font-face-chrome-rendering/
+  @media screen and (-webkit-min-device-pixel-ratio: 0) {
+    @font-face {
+      font-family: $font-family;
+        src: url('#{$file-path}.svg##{$font-family}') format('svg');
+    }
+  }
+}
+
+@include font-face(Roboto-Regular, '../fonts/Roboto-Regular-webfont', 300, normal);
+@include font-face(Roboto-LightItalic, '../fonts/Roboto-LightItalic-webfont', 300, normal);
+
+
+
+@mixin Roboto-Regular {
+  font-family: 'Roboto-Regular', arial, sans-serif;
+  font-weight: 300; font-style: normal; 
+}
+
+@mixin Roboto-LightItalic {
+  font-family: 'Roboto-LightItalic', arial, sans-serif;
+}
