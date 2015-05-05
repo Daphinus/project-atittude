@@ -54,14 +54,12 @@
         display: none;
     }
     .block-subtitle {
-        color: #50A4CF;
-        font-family: $f-stack-special;
+        color: $c-gray;
         font-size: 10px;
         font-weight: bold;
         line-height: 1.4;
         padding: 5px;
         text-align: center;
-        text-transform: uppercase;
         margin-bottom: 0px;
 
         .close {

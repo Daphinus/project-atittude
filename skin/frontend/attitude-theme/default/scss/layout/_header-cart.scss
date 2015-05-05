@@ -30,19 +30,10 @@
 /* -------------------------------------------- *
  * Skip Link - Cart
  */
-
-.skip-cart {
-    &:not(.skip-active):hover {
-        .icon {
-            background-position: -50px (-100px + ($toolbar-icon-padding-offset/2) + 1px);
-        }
-    }
-
-    .icon {
-        @extend .icon-sprite;
-        background-position: -0px (-100px + ($toolbar-icon-padding-offset/2) + 1px);
-    }
+.minicart-wrapper{
+      border: 1px solid #EDEDED;
 }
+
 
 // ---------------------------------------------
 
@@ -57,16 +48,15 @@
     }
 
     #header-cart.skip-active {
-        @include menu;
         display: block;
         position: absolute;
         z-index: 200;
-        top: 40px;
+        top: 42px;
         right: 0;
         width: 320px;
-        background: white;
+        background: $c-text-white;
     }
-
+    
 }
 
 /* -------------------------------------------- *
@@ -74,6 +64,7 @@
  */
 
 .skip-cart .count {
+    
     @include border-radius(12px);
     display: inline-block;
     top: -6px;
@@ -82,11 +73,10 @@
     width: 22px;
     height: 22px;
     background: rgba($c-action, 0.9);
-    color: #FFFFFF;
+    color: $c-text-white;
     font-size: $f-size-xxs;
     line-height: 22px;
     text-align: center;
-    font-family: $f-stack-sans;
 }
 .skip-link.skip-active .count {
     color: white;
@@ -108,8 +98,6 @@
 
 @include bp(min-width, $bp-medium + 1) {
     .skip-cart {
-        color: $c-action;
-        text-transform: uppercase;
 
         &:hover {
             text-decoration: none;
@@ -174,7 +162,6 @@
 
 .cart-menu .subtotal {
     padding: 0 15px 15px;
-    font-family: $f-stack-special;
     font-size: 24px;
     line-height: 1.2;
 }

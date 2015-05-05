@@ -133,15 +133,55 @@ $productsGridActionHeight: 85px;
 
 .products-grid .product-info {
     position: relative;
-    padding-bottom: $productsGridActionHeight + 10px;
+    //padding-bottom: $productsGridActionHeight + 10px;
+    text-transform: capitalize;
+}
+
+.products-grid .item:hover{
+    .zoom-icon{
+        background: url(../images/hover.png) 0 0;
+        display:block;
+        position: absolute;
+        top:0;
+        z-index:2;
+    }
+    a.link-wishlist, a.link-compare,.button{
+        width:42px;
+        height: 42px;
+        background: url(../images/wish.png);
+        position: absolute;
+        left: 40px;
+        top: -39px;
+        opacity: 0.8;  
+        -webkit-transition-duration: 200ms;
+        -webkit-transition-property: color;
+        -webkit-transition-timing-function: ease-in-out;
+
+}
+    a.link-wishlist{
+        background: url(../images/zoom.png);
+        left: 130px;
+    }
+    a.button{
+        background: url(../images/details.png);
+        left:87px;
+        display:block;
+    }
+    
+    a.link-wishlist, a.link-compare,.button:hover{
+        opacity: 0.8;
+    }
 }
 
 .products-grid .actions {
     padding-top: $box-spacing;
     position: absolute;
-    bottom: 0px;
+    bottom: 200px;
     min-height: $productsGridActionHeight;
-    width: 100%;
+    width: 100%;   
+    a.button{
+        display:none;
+    }
 }
 
 .products-grid .ratings .rating-box {
@@ -160,6 +200,7 @@ $productsGridActionHeight: 85px;
 
 .products-grid .add-to-links {
     margin-bottom: 0;
+    
 }
 
 // ---------------------------------------------

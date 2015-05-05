@@ -33,10 +33,12 @@
 
 .footer,
 .footer button {
-    font-family: $f-stack-special;
+    @include Roboto-LightItalic;
 }
 
 .footer {
+    background: #770000;
+    color:$c-text-white;
     clear: both;
     width: 100%;
     border-top: 1px solid $c-module-border;
@@ -57,7 +59,10 @@
 
     .block-title,
     address {
-        color: $c-text-primary;
+        color: $c-text-white;
+        strong{
+            color: $c-text-white;
+        }
     }
 
     .links {
@@ -73,7 +78,7 @@
         }
 
         a {
-            color: $c-text;
+            color: $c-text-white;
             &:hover {
                 color: $c-action;
             }
@@ -88,7 +93,6 @@
 
     .links,
     .block-subscribe {
-        text-transform: uppercase;
         font-size: $f-size-xs;
     }
 
@@ -144,7 +148,7 @@
     .block-subscribe .input-text {
         width: 100%;
         border-right: 0;
-        @include border-radius(0);
+        @include border-radius(4px);
     }
 
     .block-subscribe .block-content {
@@ -245,4 +249,9 @@
             width: 100%;
         }
     }
+}
+
+.footer address.copyright{
+    @include RobotoCondensed-Light-Italic;
+    font-size:14px;
 }

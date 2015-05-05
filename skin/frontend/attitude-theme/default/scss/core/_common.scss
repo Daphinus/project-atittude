@@ -53,7 +53,7 @@ input,
 select,
 table,
 textarea {
-    font-family: $f-stack-sans;
+    @include Roboto-Regular;
     color: $c-text;
     font-size: $f-size;
     line-height: $b-line-height;
@@ -138,6 +138,7 @@ h6, .h6 { @include h6; }
 .product-name h1,
 .product-name .h1 {
     @include pageTitle;
+    text-transform:capitalize;
 }
 
 /* -------------------------------------------- *
@@ -157,7 +158,6 @@ h6, .h6 { @include h6; }
     position: relative;
     padding: 10px 0 0;
     margin-bottom: 5px;
-    border-top: 1px solid $c-module-border;
 
     h2,
     h3,
@@ -165,7 +165,6 @@ h6, .h6 { @include h6; }
         @include h4;
         color: $c-text-primary;
         margin-bottom: 0;
-        text-transform: uppercase;
         font-weight: 600;
     }
     small {
@@ -580,8 +579,7 @@ a.button:hover {
 .breadcrumbs li {
     float: left;
     font-size: $f-size-xs;
-    font-family: $f-stack-special;
-    text-transform: uppercase;
+    @include RobotoCondensed-Light-Italic;
 }
 
 .breadcrumbs a {
@@ -726,6 +724,7 @@ a.button:hover {
 
 .main-container,
 .footer-container {
+    clear:both;
     position: relative;
     max-width: $max-container-width;
     margin: 0 auto;

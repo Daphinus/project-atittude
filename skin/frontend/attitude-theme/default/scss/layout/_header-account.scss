@@ -27,59 +27,39 @@
  * Header - Account
  * ============================================ */
 
-/* -------------------------------------------- *
- * Skip Link - Account
- */
-
-.skip-account {
-
-    &:not(.skip-active):hover {
-        .icon {
-            background-position: -50px+4px (-50px + ($toolbar-icon-padding-offset/2) + 2px);
-        }
-    }
-
-    .icon {
-        @extend .icon-sprite;
-        background-position: -0px+4px (-50px + ($toolbar-icon-padding-offset/2) + 2px);
-    }
-}
-
 // ---------------------------------------------
 
 @include bp(min-width, $bp-medium + 1) {
 
     .skip-account {
+       
         float: none;
         width: auto;
         vertical-align: top;
         display: inline-block;
-        padding: 0 10px;
-        text-transform: uppercase;
+        padding: 0 10px;       
     }
 
-    .skip-account:hover {
-    }
 
-    #header-account.skip-active {
-        @include menu;
+    #header-account.skip-active {       
         display: block;
         position: absolute;
         z-index: 200;
-        top: 40px;
-        right: 115px;
-        width: 200px;
+        top: 0px;
+        right: 131px;
+        width: auto;
+        background:$c-red;
     }
 
     #header-account a {
         display: block;
         padding: 5px 10px;
-        color: $c-text;
+        color: $c-text-white;
         line-height: 2;
     }
 
     #header-account a:hover {
-        color: $c-action;
+        color: $c-text-white;
     }
 
 }
@@ -89,18 +69,12 @@
  */
 
 #header-account {
-    padding: 5px 0;
+    a { 
+       
+        position: relative;
+        display: block;
+        padding: 5px 10px;
+        line-height:23px;
+        text-align: left;
+    }
 }
-
-#header-account a {
-    position: relative;
-    display: block;
-    padding: 5px 10px;
-    line-height:23px;
-    text-align: center;
-}
-
-#header-account a:hover {
-    color: $c-action;
-}
-

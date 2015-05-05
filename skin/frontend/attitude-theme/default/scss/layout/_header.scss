@@ -18,7 +18,7 @@
 // needs please refer to http://www.magento.com for more information.
 //
 // @category    design
-// @package     rwd_default
+// @package     Attitude-theme
 // @copyright   Copyright (c) 2006-2014 X.commerce, Inc. (http://www.magento.com)
 // @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 //
@@ -27,9 +27,9 @@
  * Header
  * ============================================ */
 
-@include bp(min-width, $bp-medium + 1) {
+@include bp(min-width, $bp-medium + 1) { //desktop
 
-    .page-header {
+    .page-header {       
         max-width: $max-container-width;
         margin: 0 auto;
         padding: 0 $trim;
@@ -41,58 +41,59 @@
 
 }
 
-.header-language-container,
+.header-language-container,//mobile first
 .page-header {
-    font-family: $f-stack-special;
+    padding: 0 $trim;
 }
 
 /* ============================================ *
  * Language switcher + welcome message
  * ============================================ */
 
-.header-language-background {
-    padding: $gap;
-    background-color: $c-action;
-    text-transform: uppercase;
-
-    .header-language-container {
-        max-width: $max-content-width;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
+#topbar {//mobile first
+    @include RobotoCondensed-Light-Italic;
+    background-color:$c-red;
+    min-height:42px;
     &:after {
         @include clearfix;
     }
 
     .form-language,
     .currency-switcher {
-        float: left;
-        margin-right: $gap;
+        float: right;
     }
 
     .welcome-msg {
-        float: right;
+        float: left;
+    }
+    ul{
+        float:left;
+        li{
+            float:left;
+            margin-right: $gap;
+            @include RobotoCondensed-Light-Italic;
+        }
     }
 }
 
-.page-header-container .store-language-container {
+.store-language-container {//mobile first
+                           
     float: right;
-    max-width: 35%;
-    padding: 13px 15px 10px 10px;
-
     label {
         display: none;
     }
     select {
+        @include RobotoCondensed-Light-Italic;
         max-width: 100%;
+        background-color:$c-red;
+        border:0 none;
+        color:$c-text-white;
+        height:42px;
     }
 }
 
-@include bp(max-width, $bp-xsmall) {
-    .page-header-container .store-language-container {
-        padding-top: 8px;
-
+@include bp(max-width, $bp-xsmall) { //mobile tablet
+    .store-language-container {       
         select {
             // Setting this font-size will causing zooming on iOs devices, but it keeps header more tidy
             font-size: $f-size-xs;
@@ -100,17 +101,9 @@
     }
 }
 
-.header-language-background,
-.header-language-background a {
+#topbar, #topbar a {
     color: $c-text-white;
-}
-
-@include bp(max-width, $bp-medium) {
-
-    .header-language-background {
-        display: none;
-    }
-
+    line-height: 42px;
 }
 
 /* ============================================ *
@@ -164,21 +157,26 @@
  * Skip Links
  * ============================================ */
 
-.skip-links {
+.skip-links {//mobile first      
     clear: both;
     overflow: hidden;
     border-top: 1px solid #EDEDED;
     border-bottom: 1px solid #EDEDED;
+    a{
+        span{
+            @include RobotoCondensed-Light-Italic;
+        }
+    }
+    
 }
 
 // ---------------------------------------------
 
 @include bp(min-width, $bp-medium + 1) {
-
     .skip-links {
         border: 0;
+        clear:none;
     }
-
 }
 
 /* -------------------------------------------- *
@@ -189,19 +187,15 @@
     position: relative;
     float: left;
     width: 20%;
-    height: 44px;
-    background: #FFFFFF;
-    color: $c-text;
+    height: 42px;
+    color: $c-text-white;
     line-height: 42px;
     text-align: center;
+    @include RobotoCondensed-Light-Italic;
 }
 
-a.skip-link {
-    text-decoration: none;
-}
-
-.skip-link:not(.skip-active):hover {
-    opacity: 0.8;
+a.skip-link:hover {
+    color:$c-text-white;
 }
 
 // ---------------------------------------------
@@ -232,16 +226,9 @@ a.skip-link {
  * Skip Link - Active
  */
 @include bp(max-width, $bp-medium) {
-
     .skip-link.skip-active {
         background: #EDEDED;
-        color: inherit;
     }
-
-    .skip-link.skip-active span {
-        color: inherit;
-    }
-
 }
 
 /* -------------------------------------------- *
@@ -313,7 +300,6 @@ a.skip-link {
         border-bottom: 1px solid $c-module-border;
         text-align: left;
         color: $c-text;
-        text-transform: uppercase;
         line-height: 30px;
     }
 
@@ -332,8 +318,8 @@ a.skip-link {
 
 .account-cart-wrapper {
     position: absolute;
-    top:0px;
-    right:0px;
+    top:-42px;
+    right:80px;
 
     @include bp(max-width, $bp-medium) {
         position: static;
