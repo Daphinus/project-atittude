@@ -721,7 +721,7 @@ a.button:hover {
 /* -------------------------------------------- *
  * Container
  */
-
+.topbar-container,
 .main-container,
 .footer-container {
     clear:both;
@@ -733,6 +733,9 @@ a.button:hover {
     &:after {
         @include clearfix;
     }
+}
+.topbar-container{
+    padding:0;
 }
 
 @include bp(min-width, 480px) {
@@ -1914,4 +1917,14 @@ body.customer-account .data-table {
     float: none;
     max-height: 50px;
     width: auto;
+}
+
+.full{
+    width:100%;
+}
+.pull-left{
+    float:left;
+}
+.pull-right{
+    float:right;
 }

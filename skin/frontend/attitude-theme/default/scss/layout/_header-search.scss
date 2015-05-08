@@ -31,13 +31,13 @@
 
     &:not(.skip-active):hover {
         .icon {
-            background-position: -50+4px (-150px + ($toolbar-icon-padding-offset/2));
+            background-position: -55+4px (-160px + ($toolbar-icon-padding-offset/2));
         }
     }
 
     .icon {
         @extend .icon-sprite;
-        background-position: 0+4px (-150px + ($toolbar-icon-padding-offset/2));
+        background-position: 0+4px (-160px + ($toolbar-icon-padding-offset/2));
     }
 }
 
@@ -46,9 +46,14 @@
 @include bp(min-width, $bp-medium + 1) {
 
     .skip-search {
-        display: none;
+        display: block;
+        position: absolute;
+        z-index: 200;
+        top: -28px;
+        right: 200px;
+        text-align:left;
+        width:150px;
     }
-
 }
 
 /* ============================================ *
@@ -68,7 +73,7 @@
         position: absolute;
         top: 200px;
         right: 0;
-        width: 25%;
+        width: 100px;
         height: 50px;
         padding: 0;
         z-index:999;

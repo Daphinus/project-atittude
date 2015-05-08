@@ -52,7 +52,14 @@
 
 #topbar {//mobile first
     @include RobotoCondensed-Light-Italic;
-    background-color:$c-red;
+    background: #d42307; /* Old browsers */
+    background: -moz-linear-gradient(top,  #d42307 0%, #9e0e04 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d42307), color-stop(100%,#9e0e04)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #d42307 0%,#9e0e04 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #d42307 0%,#9e0e04 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #d42307 0%,#9e0e04 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #d42307 0%,#9e0e04 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d42307', endColorstr='#9e0e04',GradientType=0 ); /* IE6-9 */
     min-height:42px;
     &:after {
         @include clearfix;
@@ -160,8 +167,7 @@
 .skip-links {//mobile first      
     clear: both;
     overflow: hidden;
-    border-top: 1px solid #EDEDED;
-    border-bottom: 1px solid #EDEDED;
+    border: 1px solid #EDEDED;
     a{
         span{
             @include RobotoCondensed-Light-Italic;
@@ -187,15 +193,15 @@
     position: relative;
     float: left;
     width: 20%;
-    height: 42px;
-    color: $c-text-white;
-    line-height: 42px;
+    height: 54px;
+    color: $c-text-gray;
+    line-height: 50px;
     text-align: center;
     @include RobotoCondensed-Light-Italic;
 }
 
 a.skip-link:hover {
-    color:$c-text-white;
+    color:$c-text-gray;
 }
 
 // ---------------------------------------------
@@ -227,7 +233,7 @@ a.skip-link:hover {
  */
 @include bp(max-width, $bp-medium) {
     .skip-link.skip-active {
-        background: #EDEDED;
+        //background: #EDEDED;
     }
 }
 
@@ -237,8 +243,8 @@ a.skip-link:hover {
 
 .skip-link .icon {
     display: inline-block;
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     vertical-align: middle;
 }
 
@@ -283,7 +289,7 @@ a.skip-link:hover {
 
 .skip-content.skip-active {
     display: block;
-    background: #EDEDED;
+    //background: #EDEDED;
 }
 
 /* ============================================ *
@@ -310,7 +316,8 @@ a.skip-link:hover {
 
     .no-touch #header-account a:hover,
     .no-touch .nav-primary a:hover {
-        background-color: $c-module-background;
+        background-color: $c-red;
+        color:$c-text-white;
         text-decoration: none;
     }
 

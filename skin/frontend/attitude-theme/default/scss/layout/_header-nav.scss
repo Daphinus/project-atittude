@@ -30,11 +30,11 @@
 .skip-nav {
     width: 40%;
 
-    &:not(.skip-active):hover {
+    &:not(.skip-active):hover, .skip-active {
         text-decoration: none;
 
         .icon {
-            background-position: -50px+4px ($toolbar-icon-padding-offset/2);
+            background-position: -55px+4px ($toolbar-icon-padding-offset/2);
         }
     }
 }
@@ -125,8 +125,7 @@ $nav-primary-height: 30px;
     }
 
     li.level1 a {
-        border-bottom: 1px solid $c-module-border;
-        
+        border-bottom: 1px solid $c-module-border;      
     }
 }
 
@@ -137,7 +136,7 @@ $nav-primary-height: 30px;
 }
 
 .nav-primary li.level0 > a {
-    text-transform: uppercase;
+    //text-transform: uppercase;
 }
 
 /* ============================================ *
@@ -152,8 +151,8 @@ $nav-primary-height: 30px;
         a.level0,
         a {
             line-height: $nav-primary-height + 5px;
-            color: $c-text-white;
-            background-color:$c-red;
+            color: $c-text-red;
+            background-color:$c-white;
         }
 
         // Hide all sub-menus
@@ -163,17 +162,17 @@ $nav-primary-height: 30px;
 
         // Indent sub-menus
         li.level0 li {
-            padding: 0 0 0 25px;
-            padding: 0 20px 0 20px;
+            //padding: 0 0 0 25px;
+            //padding: 0 20px 0 20px;
         }
 
         li.level1 a {
-            padding: 0 15px 0 25px;
-             background:$c-red;
+            padding: 0 15px 0 45px;
+            background:$c-white;
         }
 
         li.parent > a:after {
-            @include triangle(right, 5px, $c-text-white);
+            @include triangle(right, 5px, $c-text-red);
             top: 50%;
             left: 10px;
             right: auto;
@@ -201,7 +200,7 @@ $nav-primary-height: 30px;
  * Large Viewports - Dropdown Menu
  * ============================================ */
 
-@include bp(min-width, $bp-medium + 1) {
+@include bp(min-width, $bp-medium + 1) { //desktop
 
     .nav-primary {
         

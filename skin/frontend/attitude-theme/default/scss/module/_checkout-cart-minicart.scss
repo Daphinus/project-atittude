@@ -107,14 +107,16 @@
 
     .info-wrapper {
         margin-bottom: 0.5em;
-
+        margin-top:0.5em;
+        text-align:center;
         th {
             text-transform: uppercase;
-            padding-right: $gap;
+            //padding-right: $gap;
+            text-align:right;
         }
         td {
             color: $c-text-primary;
-            clear: right;
+            //clear: right;
         }
 
         .qty-wrapper {
@@ -150,12 +152,11 @@
     }
 
     .subtotal {
-        background-color: #DDDDDD;
         text-align: center;
         line-height: 2em;
 
         .label {
-            color: white;
+            color: $c-gray;
             text-transform: uppercase;
         }
         .price {
@@ -172,11 +173,16 @@
 
         .checkout-button {
             min-width: 145px;
+            width:100%;
         }
 
         .cart-link {
+            display:block;
+            width:100%;
+            line-height: 30px;
+            border:1px solid $c-red;
             height: 33px;
-            line-height: 39px;
+            line-height: 33px;
             text-transform: uppercase;
             font-size: $f-size-s;
         }
@@ -254,9 +260,12 @@
             padding-bottom: 33px;
 
             .cart-link {
-                bottom: 0;
-                right: $box-spacing;
-                position: absolute;
+                display:block;
+                line-height: 30px;
+                border:1px solid $c-red;
+                //bottom: 0;
+                //right: $box-spacing;
+                //position: absolute;
             }
 
             .checkout-types.minicart {
@@ -291,8 +300,8 @@
     .header-minicart {
         .minicart-actions {
             .cart-link {
-                right: auto;
-                left: 0;
+                //right: auto;
+                //left: 0;
                 text-align: center;
                 width: 100%;
             }

@@ -26,25 +26,63 @@
 /* ============================================ *
  * Header - Cart
  * ============================================ */
+.skip-cart {
+    &:not(.skip-active):hover {
+        .icon {
+            background-position: -55px (-110px + ($toolbar-icon-padding-offset/2) + 1px);
+        }
+    }
 
+    .icon {
+        @extend .icon-sprite;
+        background-position: -0px (-110px + ($toolbar-icon-padding-offset/2) + 1px);
+    }
+}
 /* -------------------------------------------- *
  * Skip Link - Cart
  */
 .minicart-wrapper{
       border: 1px solid #EDEDED;
+      background:$c-white;
+      .wraper-changes{
+          text-align:center;
+          background:lighten($c-gray, 40%);
+           color:$c-white;
+          a{
+              color:$c-white;
+              line-height:40px;
+              @include RobotoCondensed-Light-Italic;
+              margin-left:10px;
+              margin-right:10px;
+          }
+      }   
 }
-
+.header-minicart .block-subtitle{
+    @include RobotoCondensed-Light-Italic;
+}
 
 // ---------------------------------------------
 
 @include bp(min-width, $bp-medium + 1) {
-
+    
     .skip-cart {
         width: auto;
         padding: 0 10px;
+        &:not(.skip-active):hover {
+        .icon {
+            background-position: -55px (-110px + ($toolbar-icon-padding-offset/2) + 1px);
+        }
+    }
+        .icon {
+            background-position: -55px (-277px + ($toolbar-icon-padding-offset/2) + 1px);
+        }
+        
     }
 
     .skip-cart:hover {
+        .icon {
+            background-position: -55px (-277px + ($toolbar-icon-padding-offset/2) + 1px);
+        }
     }
 
     #header-cart.skip-active {
@@ -56,7 +94,9 @@
         width: 320px;
         background: $c-text-white;
     }
-    
+ 
+
+
 }
 
 /* -------------------------------------------- *
@@ -77,6 +117,7 @@
     font-size: $f-size-xxs;
     line-height: 22px;
     text-align: center;
+    left:-20px;
 }
 .skip-link.skip-active .count {
     color: white;
@@ -97,6 +138,7 @@
 }
 
 @include bp(min-width, $bp-medium + 1) {
+    
     .skip-cart {
 
         &:hover {
@@ -121,7 +163,7 @@
     }
     .skip-cart .count,
     .skip-link.skip-active .count {
-        color: $c-action;
+        //color: $c-action;
     }
 }
 

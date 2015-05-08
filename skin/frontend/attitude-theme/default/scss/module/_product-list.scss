@@ -439,9 +439,10 @@ $productsGridActionHeight: 85px;
     .product-image {
         float: left;
         min-width: 50px;
+        margin-right:10px;
     }
     .product-details {
-        margin-left: 60px;
+        //margin-left: 60px;
     }
 
     // Vertically center product name

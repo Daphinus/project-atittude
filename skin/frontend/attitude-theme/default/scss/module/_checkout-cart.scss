@@ -160,7 +160,7 @@
             @include clearfix;
         }
         vertical-align: top;
-        margin: 0 0 5px 5px;
+        margin: 0 0 10px 10px;
 
         img {
             display: inline;
@@ -168,7 +168,7 @@
         }
     }
     li:first-child {
-        margin-left: 0;
+       // margin-left: 0;
     }
     /* We always want this shipping method to display on its own line */
     .method-checkout-cart-methods-multishipping {
