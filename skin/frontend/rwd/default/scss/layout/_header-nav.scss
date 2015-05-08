@@ -150,6 +150,7 @@ $nav-primary-height: 30px;
         a.level0,
         a {
             line-height: $nav-primary-height + 5px;
+            color:$c-red;
         }
 
         // Hide all sub-menus

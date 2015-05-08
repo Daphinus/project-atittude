@@ -31,6 +31,10 @@ $mq-fixed-value: 1024;
 
 // ----------------------------------------------
 */
+.pull-left {
+  float: left;
+}
+
 /* ============================================ *
  * General Styles
  * ============================================ */
@@ -692,7 +696,7 @@ p.sku {
 }
 
 .price-notice {
-  color: #5b5b5b;
+  color: #9c9292;
 }
 
 .price-box .price {
@@ -706,7 +710,7 @@ p.sku {
 }
 
 .price-box .price-label {
-  color: #5b5b5b;
+  color: #9c9292;
   white-space: nowrap;
   font-family: "Raleway", "Helvetica Neue", Verdana, Arial, sans-serif;
 }
@@ -718,7 +722,7 @@ p.sku {
   /* We want this to show on its own line, otherwise the layout looks funky */
 }
 .price-box .minimal-price-link .label {
-  color: #5b5b5b;
+  color: #9c9292;
 }
 
 /* -------------------------------------------- *
@@ -738,7 +742,7 @@ p.sku {
 }
 
 .price-box .old-price .price {
-  color: #5b5b5b;
+  color: #9c9292;
   text-decoration: line-through;
 }
 

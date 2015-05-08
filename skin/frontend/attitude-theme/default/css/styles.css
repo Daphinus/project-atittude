@@ -31,6 +31,10 @@ $mq-fixed-value: 1024;
 
 // ----------------------------------------------
 */
+.pull-left {
+  float: left;
+}
+
 /*! normalize.css v2.0.1 | MIT License | git.io/normalize */
 /* ==========================================================================
    HTML5 display definitions
@@ -738,7 +742,7 @@ h6, .h6 {
 .block-title small {
   font-size: 100%;
   font-weight: normal;
-  color: #5b5b5b;
+  color: #9c9292;
 }
 
 body:not(.customer-account) .block:first-child .block-title {
@@ -1172,7 +1176,7 @@ a.button:hover {
  * Icons
  */
 .icon-sprite, .btn-remove2, .ratings .rating-box, .ratings .rating-box .rating, .sorter > .sort-by .sort-by-switcher, .sorter > .view-mode .grid,
-.sorter > .view-mode .list, .skip-nav .icon, .skip-search .icon, #search_mini_form .search-button:before, .product-view .sharing-links a, .review-summary-table .rating-box .rating-number:after, .ratings-table .rating-box, .ratings-table .rating-box .rating {
+.sorter > .view-mode .list, .skip-nav .icon, .skip-search .icon, #search_mini_form .search-button:before, .skip-account .icon, .skip-cart .icon, .product-view .sharing-links a, .review-summary-table .rating-box .rating-number:after, .ratings-table .rating-box, .ratings-table .rating-box .rating {
   background-image: url(../images/icon_sprite.png);
   background-repeat: no-repeat;
   text-indent: -9999px;
@@ -1180,7 +1184,7 @@ a.button:hover {
 
 @media (-webkit-min-device-pixel-ratio: 2), (min--moz-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 4 / 2), (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
   .icon-sprite, .btn-remove2, .ratings .rating-box, .ratings .rating-box .rating, .sorter > .sort-by .sort-by-switcher, .sorter > .view-mode .grid,
-  .sorter > .view-mode .list, .skip-nav .icon, .skip-search .icon, #search_mini_form .search-button:before, .product-view .sharing-links a, .review-summary-table .rating-box .rating-number:after, .ratings-table .rating-box, .ratings-table .rating-box .rating {
+  .sorter > .view-mode .list, .skip-nav .icon, .skip-search .icon, #search_mini_form .search-button:before, .skip-account .icon, .skip-cart .icon, .product-view .sharing-links a, .review-summary-table .rating-box .rating-number:after, .ratings-table .rating-box, .ratings-table .rating-box .rating {
     background-image: url(../images/icon_sprite@2x.png);
     background-size: 100px 1000px;
   }
@@ -1343,6 +1347,7 @@ a.button:hover {
 /* -------------------------------------------- *
  * Container
  */
+.topbar-container,
 .main-container,
 .footer-container {
   clear: both;
@@ -1351,11 +1356,16 @@ a.button:hover {
   margin: 0 auto;
   padding: 15px;
 }
+.topbar-container:after,
 .main-container:after,
 .footer-container:after {
   content: '';
   display: table;
   clear: both;
+}
+
+.topbar-container {
+  padding: 0;
 }
 
 @media only screen and (min-width: 480px) {
@@ -1811,7 +1821,7 @@ a.button:hover {
 }
 
 .price-notice {
-  color: #5b5b5b;
+  color: #9c9292;
 }
 
 .price-box .price {
@@ -1825,7 +1835,7 @@ a.button:hover {
 }
 
 .price-box .price-label {
-  color: #5b5b5b;
+  color: #9c9292;
   white-space: nowrap;
   font-family: "Raleway", "Helvetica Neue", Verdana, Arial, sans-serif;
 }
@@ -1837,7 +1847,7 @@ a.button:hover {
   /* We want this to show on its own line, otherwise the layout looks funky */
 }
 .price-box .minimal-price-link .label {
-  color: #5b5b5b;
+  color: #9c9292;
 }
 
 /* -------------------------------------------- *
@@ -1857,7 +1867,7 @@ a.button:hover {
 }
 
 .price-box .old-price .price {
-  color: #5b5b5b;
+  color: #9c9292;
   text-decoration: line-through;
 }
 
@@ -2113,7 +2123,7 @@ span.weee {
 }
 
 .std .note {
-  color: #5b5b5b;
+  color: #9c9292;
   font-size: 13px;
 }
 
@@ -2545,6 +2555,18 @@ body.customer-account .data-table .show-details .summary-collapse:hover:before {
   width: auto;
 }
 
+.full {
+  width: 100%;
+}
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
 /* ============================================ *
  * FORMS - COMMON
  * ============================================ */
@@ -2612,7 +2634,6 @@ li.centinel-logos div.input-box img {
 label {
   display: inline-block;
   font-size: 13px;
-  font-family: "Raleway", "Helvetica Neue", Verdana, Arial, sans-serif;
   font-weight: 600;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -2639,7 +2660,7 @@ span.required em {
  * Hints
  */
 .input-hint {
-  color: #5b5b5b;
+  color: #9c9292;
   font-size: 12px;
 }
 
@@ -2749,11 +2770,11 @@ input[type=text].qty {
  * Placeholder
  */
 ::-webkit-input-placeholder {
-  color: #5b5b5b;
+  color: #9c9292;
 }
 
 input:-moz-placeholder {
-  color: #5b5b5b;
+  color: #9c9292;
 }
 
 /* -------------------------------------------- *
@@ -2916,7 +2937,7 @@ form .form-instructions {
   font-style: italic;
   font-family: Georgia, Times, "Times New Roman", serif;
   font-size: 13px;
-  color: #5b5b5b;
+  color: #9c9292;
 }
 
 /* ============================================ *
@@ -3240,7 +3261,22 @@ body {
   font-family: 'RobotoCondensed-Light-Italic', arial, sans-serif;
   font-weight: 300;
   font-style: normal;
-  background-color: #be0000;
+  background: #d42307;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #d42307 0%, #9e0e04 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d42307), color-stop(100%, #9e0e04));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #d42307 0%, #9e0e04 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #d42307 0%, #9e0e04 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #d42307 0%, #9e0e04 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #d42307 0%, #9e0e04 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d42307', endColorstr='#9e0e04',GradientType=0 );
+  /* IE6-9 */
   min-height: 42px;
 }
 #topbar:after {
@@ -3337,8 +3373,7 @@ body {
 .skip-links {
   clear: both;
   overflow: hidden;
-  border-top: 1px solid #EDEDED;
-  border-bottom: 1px solid #EDEDED;
+  border: 1px solid #EDEDED;
 }
 .skip-links a span {
   font-family: 'RobotoCondensed-Light-Italic', arial, sans-serif;
@@ -3359,9 +3394,9 @@ body {
   position: relative;
   float: left;
   width: 20%;
-  height: 42px;
-  color: #FFF;
-  line-height: 42px;
+  height: 54px;
+  color: #9c9292;
+  line-height: 50px;
   text-align: center;
   font-family: 'RobotoCondensed-Light-Italic', arial, sans-serif;
   font-weight: 300;
@@ -3369,7 +3404,7 @@ body {
 }
 
 a.skip-link:hover {
-  color: #FFF;
+  color: #9c9292;
 }
 
 @media only screen and (max-width: 770px) {
@@ -3389,18 +3424,13 @@ a.skip-link:hover {
 /* -------------------------------------------- *
  * Skip Link - Active
  */
-@media only screen and (max-width: 770px) {
-  .skip-link.skip-active {
-    background: #EDEDED;
-  }
-}
 /* -------------------------------------------- *
  * Skip Link - Icon
  */
 .skip-link .icon {
   display: inline-block;
-  width: 30px;
-  height: 30px;
+  width: 50px;
+  height: 50px;
   vertical-align: middle;
 }
 
@@ -3435,7 +3465,6 @@ a.skip-link:hover {
 
 .skip-content.skip-active {
   display: block;
-  background: #EDEDED;
 }
 
 /* ============================================ *
@@ -3458,7 +3487,8 @@ a.skip-link:hover {
 
   .no-touch #header-account a:hover,
   .no-touch .nav-primary a:hover {
-    background-color: #F4F4F4;
+    background-color: #be0000;
+    color: #FFF;
     text-decoration: none;
   }
 }
@@ -3479,11 +3509,11 @@ a.skip-link:hover {
 .skip-nav {
   width: 40%;
 }
-.skip-nav:not(.skip-active):hover {
+.skip-nav:not(.skip-active):hover, .skip-nav .skip-active {
   text-decoration: none;
 }
-.skip-nav:not(.skip-active):hover .icon {
-  background-position: -46px 4px;
+.skip-nav:not(.skip-active):hover .icon, .skip-nav .skip-active .icon {
+  background-position: -51px 4px;
 }
 
 .skip-nav .label {
@@ -3551,10 +3581,6 @@ a.skip-link:hover {
   display: block;
 }
 
-.nav-primary li.level0 > a {
-  text-transform: uppercase;
-}
-
 /* ============================================ *
  * Small Viewports - Accordion Style Menu
  * ============================================ */
@@ -3562,19 +3588,15 @@ a.skip-link:hover {
   .nav-primary a.level0,
   .nav-primary a {
     line-height: 35px;
-    color: #FFF;
-    background-color: #be0000;
+    color: #af0100;
+    background-color: #ffffff;
   }
   .nav-primary li.level0 ul {
     display: none;
   }
-  .nav-primary li.level0 li {
-    padding: 0 0 0 25px;
-    padding: 0 20px 0 20px;
-  }
   .nav-primary li.level1 a {
-    padding: 0 15px 0 25px;
-    background: #be0000;
+    padding: 0 15px 0 45px;
+    background: #ffffff;
   }
   .nav-primary li.parent > a:after {
     content: '';
@@ -3584,7 +3606,7 @@ a.skip-link:hover {
     display: block;
     border-top: 5px solid transparent;
     border-bottom: 5px solid transparent;
-    border-left: 5px solid #FFF;
+    border-left: 5px solid #af0100;
     border-right: none;
     top: 50%;
     left: 10px;
@@ -3644,7 +3666,7 @@ a.skip-link:hover {
     z-index: 200;
   }
   .nav-primary li.level0 ul {
-    background: #FBFBFB;
+    background: #ffffff;
     border: solid 1px #CCCCCC;
     position: absolute;
     left: 0;
@@ -3700,15 +3722,21 @@ a.skip-link:hover {
  * Search - Skip Link
  * ============================================ */
 .skip-search:not(.skip-active):hover .icon {
-  background-position: -46px -146px;
+  background-position: -51px -156px;
 }
 .skip-search .icon {
-  background-position: 4px -146px;
+  background-position: 4px -156px;
 }
 
 @media only screen and (min-width: 771px) {
   .skip-search {
-    display: none;
+    display: block;
+    position: absolute;
+    z-index: 200;
+    top: -28px;
+    right: 200px;
+    text-align: left;
+    width: 150px;
   }
 }
 /* ============================================ *
@@ -3724,7 +3752,7 @@ a.skip-link:hover {
     position: absolute;
     top: 200px;
     right: 0;
-    width: 25%;
+    width: 100px;
     height: 50px;
     padding: 0;
     z-index: 999;
@@ -3784,13 +3812,32 @@ a.skip-link:hover {
 /* ============================================ *
  * Header - Account
  * ============================================ */
+.skip-account:not(.skip-active):hover .icon {
+  background-position: -51px -49px;
+}
+.skip-account .icon {
+  background-position: 4px -50px;
+}
+
+#header-account.skip-active {
+  border: 1px solid #dbdbdb;
+}
+
 @media only screen and (min-width: 771px) {
-  .skip-account {
+  .skip-link.skip-account, .skip-link.skip-account:hover {
     float: none;
     width: auto;
     vertical-align: top;
     display: inline-block;
     padding: 0 10px;
+    color: #ffffff;
+    text-decoration: none;
+  }
+  .skip-link.skip-account .icon, .skip-link.skip-account:hover .icon {
+    background-position: 4px -272px;
+  }
+  .skip-link.skip-account .skip-active:hover .icon, .skip-link.skip-account .skip-active .icon, .skip-link.skip-account:hover .skip-active:hover .icon, .skip-link.skip-account:hover .skip-active .icon {
+    background-position: 4px -272px;
   }
 
   #header-account.skip-active {
@@ -3798,47 +3845,95 @@ a.skip-link:hover {
     position: absolute;
     z-index: 200;
     top: 0px;
-    right: 131px;
+    right: 200px;
     width: auto;
-    background: #be0000;
+    background: #ffffff;
+    border: 1px solid #dbdbdb;
   }
 
-  #header-account a {
+  #select-language option {
+    background: #ffffff;
+  }
+
+  #header-account a, #select-language option {
     display: block;
-    padding: 5px 10px;
-    color: #FFF;
+    padding: 5px 12px;
+    text-align: right;
+    color: #af0100;
     line-height: 2;
+    font-size: 14px;
   }
 
   #header-account a:hover {
     color: #FFF;
+    background: #be0000;
+    text-decoration: none;
   }
 }
 /* -------------------------------------------- *
  * Account Links
  */
 #header-account a {
+  color: #be0000;
   position: relative;
   display: block;
   padding: 5px 10px;
-  line-height: 23px;
+  line-height: 30px;
   text-align: left;
 }
 
 /* ============================================ *
  * Header - Cart
  * ============================================ */
+.skip-cart:not(.skip-active):hover .icon {
+  background-position: -55px -105px;
+}
+.skip-cart .icon {
+  background-position: 0px -105px;
+}
+
 /* -------------------------------------------- *
  * Skip Link - Cart
  */
 .minicart-wrapper {
   border: 1px solid #EDEDED;
+  background: #ffffff;
+}
+.minicart-wrapper .wraper-changes {
+  text-align: center;
+  background: #c1c1c1;
+  color: #ffffff;
+}
+.minicart-wrapper .wraper-changes a {
+  color: #ffffff;
+  line-height: 40px;
+  font-family: 'RobotoCondensed-Light-Italic', arial, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.header-minicart .block-subtitle {
+  font-family: 'RobotoCondensed-Light-Italic', arial, sans-serif;
+  font-weight: 300;
+  font-style: normal;
 }
 
 @media only screen and (min-width: 771px) {
   .skip-cart {
     width: auto;
     padding: 0 10px;
+  }
+  .skip-cart:not(.skip-active):hover .icon {
+    background-position: -55px -105px;
+  }
+  .skip-cart .icon {
+    background-position: -55px -272px;
+  }
+
+  .skip-cart:hover .icon {
+    background-position: -55px -272px;
   }
 
   #header-cart.skip-active {
@@ -3869,6 +3964,7 @@ a.skip-link:hover {
   font-size: 11px;
   line-height: 22px;
   text-align: center;
+  left: -20px;
 }
 
 .skip-link.skip-active .count {
@@ -3903,11 +3999,6 @@ a.skip-link:hover {
   }
   .skip-cart .count:after {
     content: ')';
-  }
-
-  .skip-cart .count,
-  .skip-link.skip-active .count {
-    color: #be0000;
   }
 }
 .skip-cart .count.empty {
@@ -3978,7 +4069,7 @@ a.skip-link:hover {
 
 .mini-cart-list .has-options {
   margin-bottom: 0;
-  color: #5b5b5b;
+  color: #9c9292;
   font-size: 12px;
 }
 
@@ -4380,7 +4471,7 @@ p.product-name a:hover {
 }
 
 .products-grid .price-box {
-  color: #5b5b5b;
+  color: #9c9292;
   font-size: 13px;
   margin: 0 0 5px;
 }
@@ -4668,9 +4759,7 @@ p.product-name a:hover {
 .mini-products-list .product-image {
   float: left;
   min-width: 50px;
-}
-.mini-products-list .product-details {
-  margin-left: 60px;
+  margin-right: 10px;
 }
 .mini-products-list .product-details .product-name {
   padding-top: 10px;
@@ -4837,7 +4926,7 @@ p.product-name a:hover {
   display: block;
 }
 .block-layered-nav dl dd ol > li > a .count {
-  color: #5b5b5b;
+  color: #9c9292;
 }
 
 @media only screen and (min-width: 771px) {
@@ -6308,7 +6397,7 @@ p.product-name a:hover {
 }
 .checkout-types li {
   vertical-align: top;
-  margin: 0 0 5px 5px;
+  margin: 0 0 10px 10px;
 }
 .checkout-types li:after {
   content: '';
@@ -6318,9 +6407,6 @@ p.product-name a:hover {
 .checkout-types li img {
   display: inline;
   vertical-align: top;
-}
-.checkout-types li:first-child {
-  margin-left: 0;
 }
 .checkout-types .method-checkout-cart-methods-multishipping {
   display: block;
@@ -7042,7 +7128,7 @@ p.product-name a:hover {
 }
 
 .opc .section.allow .step-title h2 {
-  color: #5b5b5b;
+  color: #9c9292;
 }
 
 .opc .section.allow .step-title:hover h2,
@@ -7277,7 +7363,7 @@ body:not(.opc-has-progressed-from-login) .opc.opc-firststep-login .section#opc-l
   margin-bottom: 6px;
   text-transform: uppercase;
   font-weight: normal;
-  color: #5b5b5b;
+  color: #9c9292;
 }
 .block-progress dt.complete {
   color: #636363;
@@ -7704,7 +7790,7 @@ body:not(.opc-has-progressed-from-login) .opc.opc-firststep-login .section#opc-l
 
 /* CUSTOM */
 .availability.out-of-stock span {
-  color: #5b5b5b;
+  color: #9c9292;
 }
 
 .product-view .product-options .swatch-attr {
@@ -7806,7 +7892,7 @@ body:not(.opc-has-progressed-from-login) .opc.opc-firststep-login .section#opc-l
   font-style: italic;
   font-family: Georgia, Times, "Times New Roman", serif;
   font-size: 13px;
-  color: #5b5b5b;
+  color: #9c9292;
 }
 
 .remember-me-box a.hide {
@@ -9423,14 +9509,15 @@ div.paypal-logo span > img {
 }
 .header-minicart .info-wrapper {
   margin-bottom: 0.5em;
+  margin-top: 0.5em;
+  text-align: center;
 }
 .header-minicart .info-wrapper th {
   text-transform: uppercase;
-  padding-right: 10px;
+  text-align: right;
 }
 .header-minicart .info-wrapper td {
   color: #5b5b5b;
-  clear: right;
 }
 .header-minicart .info-wrapper .qty-wrapper td {
   height: 33px;
@@ -9462,12 +9549,11 @@ div.paypal-logo span > img {
   opacity: 1;
 }
 .header-minicart .subtotal {
-  background-color: #DDDDDD;
   text-align: center;
   line-height: 2em;
 }
 .header-minicart .subtotal .label {
-  color: white;
+  color: #5b5b5b;
   text-transform: uppercase;
 }
 .header-minicart .subtotal .price {
@@ -9482,10 +9568,15 @@ div.paypal-logo span > img {
 }
 .header-minicart .minicart-actions .checkout-button {
   min-width: 145px;
+  width: 100%;
 }
 .header-minicart .minicart-actions .cart-link {
+  display: block;
+  width: 100%;
+  line-height: 30px;
+  border: 1px solid #be0000;
   height: 33px;
-  line-height: 39px;
+  line-height: 33px;
   text-transform: uppercase;
   font-size: 13px;
 }
@@ -9543,9 +9634,9 @@ div.paypal-logo span > img {
     padding-bottom: 33px;
   }
   .header-minicart .minicart-actions .cart-link {
-    bottom: 0;
-    right: 10px;
-    position: absolute;
+    display: block;
+    line-height: 30px;
+    border: 1px solid #be0000;
   }
   .header-minicart .minicart-actions .checkout-types.minicart li {
     display: inline-block;
@@ -9567,8 +9658,6 @@ div.paypal-logo span > img {
 }
 @media only screen and (max-width: 740px) {
   .header-minicart .minicart-actions .cart-link {
-    right: auto;
-    left: 0;
     text-align: center;
     width: 100%;
   }
