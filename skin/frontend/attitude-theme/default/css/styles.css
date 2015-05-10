@@ -3395,7 +3395,7 @@ body {
   float: left;
   width: 20%;
   height: 54px;
-  color: #9c9292;
+  color: #af0100;
   line-height: 50px;
   text-align: center;
   font-family: 'RobotoCondensed-Light-Italic', arial, sans-serif;
@@ -3471,13 +3471,17 @@ a.skip-link:hover {
  * Global Header Navigation
  * ============================================ */
 @media only screen and (max-width: 770px) {
+  .skip-link {
+    border-right: 1px solid #EDEDED;
+  }
+
   #header-account li a,
   .nav-primary a.level0 {
     padding: 0 15px 0 25px;
     border-bottom: 1px solid #CCCCCC;
     text-align: left;
-    color: #636363;
-    line-height: 30px;
+    color: #af0100;
+    line-height: 40px;
   }
 
   #header-account li:last-child a,
@@ -3728,15 +3732,34 @@ a.skip-link:hover {
   background-position: 4px -156px;
 }
 
+.skip-search.skip-active .icon {
+  background-position: -51px -154px;
+}
+
 @media only screen and (min-width: 771px) {
-  .skip-search {
-    display: block;
+  .skip-link.skip-search, .skip-link.skip-search:hover {
+    display: none !important;
+    float: none;
+    width: 120px;
+    vertical-align: top;
+    display: inline-block;
+    padding: 0 10px;
+    color: #ffffff;
+    text-decoration: none;
+    height: 42px;
+    line-height: 42px;
     position: absolute;
     z-index: 200;
-    top: -28px;
-    right: 200px;
+    top: 1px;
+    right: 210px;
     text-align: left;
     width: 150px;
+  }
+  .skip-link.skip-search .icon, .skip-link.skip-search:hover .icon {
+    background-position: 4px -322px;
+  }
+  .skip-link.skip-search .skip-active:hover .icon, .skip-link.skip-search .skip-active .icon, .skip-link.skip-search:hover .skip-active:hover .icon, .skip-link.skip-search:hover .skip-active .icon {
+    background-position: 4px -322px;
   }
 }
 /* ============================================ *
@@ -3797,7 +3820,7 @@ a.skip-link:hover {
   height: 30px;
   margin-top: -15px;
   margin-left: -15px;
-  background-position: 4px -146px;
+  background-position: 4px -334px;
 }
 
 #search_mini_form .search-button:hover:before {
@@ -3819,6 +3842,10 @@ a.skip-link:hover {
   background-position: 4px -50px;
 }
 
+.skip-account.skip-active .icon {
+  background-position: -51px -49px;
+}
+
 #header-account.skip-active {
   border: 1px solid #dbdbdb;
 }
@@ -3832,6 +3859,8 @@ a.skip-link:hover {
     padding: 0 10px;
     color: #ffffff;
     text-decoration: none;
+    height: 42px;
+    line-height: 42px;
   }
   .skip-link.skip-account .icon, .skip-link.skip-account:hover .icon {
     background-position: 4px -272px;
@@ -3845,7 +3874,7 @@ a.skip-link:hover {
     position: absolute;
     z-index: 200;
     top: 0px;
-    right: 200px;
+    right: 180px;
     width: auto;
     background: #ffffff;
     border: 1px solid #dbdbdb;
@@ -3877,7 +3906,7 @@ a.skip-link:hover {
   color: #be0000;
   position: relative;
   display: block;
-  padding: 5px 10px;
+  padding: 5px 25px;
   line-height: 30px;
   text-align: left;
 }
@@ -3923,6 +3952,7 @@ a.skip-link:hover {
 @media only screen and (min-width: 771px) {
   .skip-cart {
     width: auto;
+    color: #ffffff;
     padding: 0 10px;
   }
   .skip-cart:not(.skip-active):hover .icon {
@@ -3981,6 +4011,27 @@ a.skip-link:hover {
   }
 }
 @media only screen and (min-width: 771px) {
+  .skip-link.skip-cart, .skip-link.skip-cart:hover {
+    float: none;
+    width: auto;
+    vertical-align: top;
+    display: inline-block;
+    padding: 0 10px;
+    color: #ffffff;
+    text-decoration: none;
+    height: 42px;
+    line-height: 42px;
+  }
+  .skip-link.skip-cart .icon, .skip-link.skip-cart:hover .icon {
+    background-position: -51px -272px;
+  }
+  .skip-link.skip-cart .skip-active:hover .icon, .skip-link.skip-cart .skip-active .icon, .skip-link.skip-cart:hover .skip-active:hover .icon, .skip-link.skip-cart:hover .skip-active .icon {
+    background-position: -51px -272px;
+  }
+
+  .skip-cart {
+    color: #ffffff;
+  }
   .skip-cart:hover {
     text-decoration: none;
   }

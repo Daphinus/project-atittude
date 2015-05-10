@@ -38,10 +38,18 @@
         @extend .icon-sprite;
         background-position: -0px+4px (-56px + ($toolbar-icon-padding-offset/2) + 2px);
     }
+    
 }
-#header-account.skip-active  {       
-        border:1px solid lighten($c-gray,50%);
+
+.skip-account.skip-active{
+    .icon {
+        background-position: -55px+4px (-55px + ($toolbar-icon-padding-offset/2) + 2px);
     }
+}
+
+#header-account.skip-active  {       
+    border:1px solid lighten($c-gray,50%);
+}
 // ---------------------------------------------
 
 @include bp(min-width, $bp-medium + 1) {
@@ -54,6 +62,8 @@
         padding: 0 10px;
         color:$c-white;
         text-decoration:none;
+        height: 42px;
+        line-height: 42px;
       .icon {
             background-position: -0px+4px (-278px + ($toolbar-icon-padding-offset/2) + 2px);
         }
@@ -65,13 +75,12 @@
         
     }
     
-
     #header-account.skip-active  {       
         display: block;
         position: absolute;
         z-index: 200;
         top: 0px;
-        right: 200px;
+        right: 180px;
         width: auto;
         background:$c-white;
         border:1px solid lighten($c-gray,50%);
@@ -79,6 +88,7 @@
     #select-language option{
         background:$c-white;
     }
+    
     #header-account a,#select-language option{
         display: block;
         padding: 5px 12px;
@@ -105,7 +115,7 @@
        color:$c-red;
         position: relative;
         display: block;
-        padding: 5px 10px;
+        padding: 5px 25px;
         line-height:30px;
         text-align: left;
     }

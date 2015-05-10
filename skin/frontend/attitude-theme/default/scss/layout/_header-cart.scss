@@ -67,6 +67,7 @@
     
     .skip-cart {
         width: auto;
+        color:$c-white;
         padding: 0 10px;
         &:not(.skip-active):hover {
         .icon {
@@ -138,9 +139,28 @@
 }
 
 @include bp(min-width, $bp-medium + 1) {
-    
+    .skip-link.skip-cart,.skip-link.skip-cart:hover {
+        float: none;
+        width: auto;
+        vertical-align: top;
+        display: inline-block;
+        padding: 0 10px;
+        color:$c-white;
+        text-decoration:none;
+        height: 42px;
+        line-height: 42px;
+      .icon {
+            background-position: -55px+4px (-278px + ($toolbar-icon-padding-offset/2) + 2px);
+        }
+        .skip-active:hover, .skip-active{
+            .icon {
+                background-position: -55px+4px (-278px + ($toolbar-icon-padding-offset/2) + 2px);
+            }
+        }
+        
+    }
     .skip-cart {
-
+        color:$c-white;
         &:hover {
             text-decoration: none;
         }

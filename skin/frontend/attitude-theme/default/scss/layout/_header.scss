@@ -41,7 +41,7 @@
 
 }
 
-.header-language-container,//mobile first
+.header-language-container,
 .page-header {
     padding: 0 $trim;
 }
@@ -50,7 +50,7 @@
  * Language switcher + welcome message
  * ============================================ */
 
-#topbar {//mobile first
+#topbar {
     @include RobotoCondensed-Light-Italic;
     background: #d42307; /* Old browsers */
     background: -moz-linear-gradient(top,  #d42307 0%, #9e0e04 100%); /* FF3.6+ */
@@ -83,7 +83,7 @@
     }
 }
 
-.store-language-container {//mobile first
+.store-language-container {
                            
     float: right;
     label {
@@ -164,7 +164,7 @@
  * Skip Links
  * ============================================ */
 
-.skip-links {//mobile first      
+.skip-links {  
     clear: both;
     overflow: hidden;
     border: 1px solid #EDEDED;
@@ -194,7 +194,7 @@
     float: left;
     width: 20%;
     height: 54px;
-    color: $c-text-gray;
+    color: $c-text-red;
     line-height: 50px;
     text-align: center;
     @include RobotoCondensed-Light-Italic;
@@ -233,7 +233,7 @@ a.skip-link:hover {
  */
 @include bp(max-width, $bp-medium) {
     .skip-link.skip-active {
-        //background: #EDEDED;
+
     }
 }
 
@@ -289,7 +289,6 @@ a.skip-link:hover {
 
 .skip-content.skip-active {
     display: block;
-    //background: #EDEDED;
 }
 
 /* ============================================ *
@@ -299,14 +298,17 @@ a.skip-link:hover {
 @include bp(max-width, $bp-medium) {
     // ---------------------------------------------
     // Link
-
+     .skip-link {
+        border-right: 1px solid #EDEDED;
+        
+    }
     #header-account li a,
     .nav-primary a.level0 {
         padding: 0 15px 0 25px;
         border-bottom: 1px solid $c-module-border;
         text-align: left;
-        color: $c-text;
-        line-height: 30px;
+        color: $c-text-red;
+        line-height: 40px;
     }
 
     #header-account li:last-child a,
@@ -332,3 +334,4 @@ a.skip-link:hover {
         position: static;
     }
 }
+
