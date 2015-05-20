@@ -52,13 +52,14 @@ Default layout, loads most of the pages
                 <!--<action method="setLinkUrl"><url>checkout/cart</url></action>-->
             <!--</block>-->
         </reference>
-        <reference name="right">
+        <!--<reference name="right">
+                     
             <block type="catalog/product_compare_sidebar" before="cart_sidebar" name="catalog.compare.sidebar" template="catalog/product/compare/sidebar.phtml"/>
-            <!--<block type="core/template" name="right.permanent.callout" template="callouts/right_col.phtml">-->
-                <!--<action method="setImgSrc"><src>images/media/col_right_callout.jpg</src></action>-->
-                <!--<action method="setImgAlt" translate="alt" module="catalog"><alt>Keep your eyes open for our special Back to School items and save A LOT!</alt></action>-->
-            <!--</block>-->
-        </reference>
+           <block type="core/template" name="right.permanent.callout" template="callouts/right_col.phtml">-->
+            <!--<action method="setImgSrc"><src>images/media/col_right_callout.jpg</src></action>-->
+            <!--<action method="setImgAlt" translate="alt" module="catalog"><alt>Keep your eyes open for our special Back to School items and save A LOT!</alt></action>-->
+            <!--</block>
+        </reference>-->
         <reference name="footer_links">
             <action method="addLink" translate="label title" module="catalog" ifconfig="catalog/seo/site_map"><label>Site Map</label><url helper="catalog/map/getCategoryUrl" /><title>Site Map</title></action>
         </reference>
@@ -176,9 +177,9 @@ Compare products page
     </catalog_product_compare_index>
 
     <customer_account_index>
-        <reference name="right">
+        <!--<reference name="right">
             <action method="unsetChild"><name>catalog.compare.sidebar</name></action>
-        </reference>
+        </reference>-->
     </customer_account_index>
 
 <!--
@@ -345,7 +346,7 @@ Product send to friend
         <label>Catalog Product Email to a Friend</label>
         <!-- Mage_Catalog -->
         <reference name="root">
-            <action method="setTemplate"><template>page/2columns-right.phtml</template></action>
+            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
         </reference>
         <reference name="head">
             <action method="addJs"><script>varien/product.js</script></action>

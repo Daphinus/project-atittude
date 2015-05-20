@@ -1194,7 +1194,7 @@ a.button:hover {
 
 .price-box .price,
 .price {
-    font-family: $f-stack-sans;
+    @include Roboto-Regular;
 }
 
 .price-box .price-label {
@@ -1455,11 +1455,12 @@ span.weee {
 
     .rating-box {
         @extend .icon-sprite;
-        width: 65px;
-        height: 13px;
+        width: 86px;
+        height: 14px;
         background-repeat: repeat-x;
         background-position: 0 -615px;
         overflow: hidden;
+        margin:0 auto;
     }
     .rating-box .rating {
         @extend .icon-sprite;
