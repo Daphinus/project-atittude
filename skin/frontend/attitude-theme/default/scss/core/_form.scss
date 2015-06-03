@@ -50,11 +50,25 @@
 }
 
 form .legend {
-    @include h3;
-    margin-bottom: 15px;
-    padding-bottom: 7px;
-    border-bottom: 1px solid $c-module-border-light;
+    position:relative;
+    padding-left:0;
+    font-size:18px;
+    margin-bottom:20px;
+    &:after{
+            content: '';
+            position: absolute;
+            width: 30px;
+            border-top: 2px solid #be0000;
+            border-right: none;
+            border-left: none;
+            border-bottom: none;
+            top: 26px;
+            left:0px;
+        }
+    
 }
+
+
 
 /* -------------------------------------------- *
  * Input Box
@@ -153,11 +167,22 @@ textarea {
  */
 
 .input-text {
-    @include appearance(none);
+
     @include border-radius(2px);
     border: 1px solid $c-input-border;
     background: #FFFFFF;
-    font-size: $f-size-l;
+    padding: 5px 5px;
+    border: 1px solid;
+    border-color: #dcdee2;
+    height: 40px;
+    line-height: 14px;
+    -moz-transition: all 400ms ease;
+    -webkit-transition: all 400ms ease;
+    -o-transition: all 400ms ease;
+    transition: all 400ms ease;
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 
     &:focus {
         border: 1px solid $c-input-border-focus;
@@ -179,8 +204,22 @@ input[type=number],
 input[type=password],
 input[type=tel],
 input[type=text] {
-    height: 30px;
-    padding: 0 8px;
+    @include border-radius(2px);
+    border: 1px solid $c-input-border;
+    background: #FFFFFF;
+    padding: 5px 5px;
+    border: 1px solid;
+    border-color: #dcdee2;
+    height: 40px;
+    line-height: 14px;
+    -moz-transition: all 400ms ease;
+    -webkit-transition: all 400ms ease;
+    -o-transition: all 400ms ease;
+    transition: all 400ms ease;
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    text-indent:5px;
 }
 
 input[type=email],

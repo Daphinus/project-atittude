@@ -209,6 +209,7 @@ body.customer-account {
                 border: 0;
                 text-align: left;
             }
+            
         }
 
         .title-buttons {
@@ -296,6 +297,14 @@ body.customer-account {
 
                 .actions {
                     margin-top: $trim;
+                }
+                a{
+                    @include RobotoCondensed-Light-Italic;
+                }
+                .currently{
+                    .block-subtitle{
+                        padding-left: 10px;
+                    }
                 }
             }
         }

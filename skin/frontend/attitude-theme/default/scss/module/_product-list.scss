@@ -33,7 +33,7 @@
 
 .category-title h1,
 body.catalogsearch-result-index .page-title h1 {
-    border-bottom: none;
+    //border-bottom: none;
 }
 
 .category-image {
@@ -75,8 +75,7 @@ p.product-name {
     color:$c-white;
     @include Roboto-Regular;
     @extend .TransitionEase;
-    min-height:50px;
-    
+    min-height:50px;  
 }
 /* ============================================ *
  * Product Grid
@@ -95,7 +94,7 @@ $product-column-spacing: 20px;
 .products-grid > li {
     position: relative;
     margin-bottom: $product-column-spacing;
-    text-align: center;
+    //text-align: center;
 
     &:after {
         @include clearfix;
@@ -395,10 +394,101 @@ $productsGridActionHeight: 25px;
                 max-width: 100%;
             }
         }
+        .rollover-container{
+            position:relative;
+           opacity:1;
+           padding:0;
+           height:auto;
+        }
+        .product-secondary {
+            span.here{
+                display: block;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                left: 0px;
+                top: 0px;
+                border: 2px solid  #be0000;
+                opacity: 1;
+                visibility: hidden;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                -ms-border-radius: 50%;
+                -o-border-radius: 50%;
+                border-radius: 50%;
+                -moz-background-clip: padding;
+                -webkit-background-clip: padding-box;
+                background-clip: padding-box;
+            }
+        position: relative;   
+        a, ul li a{       
+            position: relative;
+            display: inline-block;
+            float: none;
+            width: 46px;
+            height: 46px;
+            padding: 0;
+            margin: 5px;
+            text-indent: -9999px;
+            line-height: 0;
+            background:$c-red;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+            border-radius: 50%;
+            
+            .icon-hover{
+                display:block;
+                visibility:visible;
+                opacity:0;
+                -webkit-transform:scale(1.3);
+                -mox-transform:scale(1.3);
+                -o-transform:scale(1.3);
+                transform:scale(1.3);
+                -webkit-transition-duration:.5s;
+                -moz-transition-duration:.5s;
+                -o-transition-duration:.5s;
+                transition-duration:.5s;           
+            }
+        }
+
+        a.button,.btn-cart{
+            position:absolute;
+            left:0px;
+            top:64px;
+            background:$c-red url(../images/icon_sprite.png) 5px -669px;    
+        }
+        ul li a.link-wishlist{
+            position:absolute;
+            left:55px;
+            top:64px;
+            background:$c-red url(../images/icon_sprite.png)  5px -703px;
+
+        }
+        ul li a.link-compare{
+            position:absolute;
+            top:64px;
+            left:110px;
+            background:$c-red url(../images/icon_sprite.png)  6px -741px;       
+        }      
+    
+
+}
     }
     & > li:last-child {
         padding-bottom: 0;
         border-bottom: none;
+    }
+    & > li .product-image:hover{
+        .rollover-container{
+           position:relative;
+           opacity:0.6;
+           padding:0;
+           height:auto;
+           
+        }
+        border: 1px solid $c-module-border-light;
     }
 }
 
@@ -417,13 +507,17 @@ $productsGridActionHeight: 25px;
         .rating-links {
             float: left;
             margin-right: $element-spacing;
+            
         }
         .rating-links {
-            margin-top: 4px;
+            margin-top: 10px;
+            width:100%;
+            text-align:left;
         }
     }
     .price-box {
         margin-top: 0;
+        text-align:left;
     }
     .price-box .price {
         font-size: $f-size-xxl;
@@ -438,15 +532,16 @@ $productsGridActionHeight: 25px;
     .product-primary,
     .desc {
         float: left;
-        width: 65%;
+        width: 100%;
         overflow: hidden;
     }
     .product-secondary {
-        float: right;
-        width: 35%;
+        float: left;
+        width: 100%;
         text-align: right;
         clear: right;
     }
+   
 }
 
 @include bp(min-width, $bp-xsmall + 1) {
@@ -466,8 +561,14 @@ $productsGridActionHeight: 25px;
         .product-secondary {
             float: right;
             width: 40%;
+            .action a{
+                border-radius:50%;
+            }
         }
+        
     }
+    
+    
 }
 
 @include bp(max-width, 600px) {
@@ -552,8 +653,8 @@ $productsGridActionHeight: 25px;
  * ============================================ */
 
 .category-image {
-    border: 1px solid $c-module-border;
-    padding: 10px;
+    //border: 1px solid $c-module-border;
+    //padding: 10px;
 
     img {
         width: 100%;
@@ -586,8 +687,9 @@ $productsGridActionHeight: 25px;
     margin-top: $box-spacing;
 
     ol > li > span, ol > li > a {
-        padding: 5px 15px;
+        padding: 10px 15px;
         display: block;
+        @include RobotoCondensed-Light-Italic;
     }
     ol > li > a .count {
         color: $c-text-gray;
@@ -715,6 +817,8 @@ $productsGridActionHeight: 25px;
     .block-subtitle {
         display: block;
         @include h4;
+        padding-left:10px;
+        text-transform:capitalize;
     }
 
     ol {
@@ -737,6 +841,7 @@ $productsGridActionHeight: 25px;
 .block-layered-nav .actions {
     text-align: right;
     margin-bottom: $element-spacing;
+    padding-left:10px;
 }
 
 

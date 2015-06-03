@@ -52,6 +52,7 @@
         <li class="item<?php if( ++$_iterator == sizeof($_productCollection) ): ?> last<?php endif; ?>">
             <?php // Product Image ?>
             <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image">
+                <div class="rollover-container" >
                 <?php /* Based on the native RWD styling, product images are displayed at a max of ~400px wide when viewed on a
                         one column page layout with four product columns from a 1280px viewport. For bandwidth reasons,
                         we are going to serve a 300px image, as it will look fine at 400px and most of the times, the image
@@ -62,8 +63,10 @@
                 <img id="product-collection-image-<?php echo $_product->getId(); ?>"
                      src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->keepFrame(false)->resize($_imgSize); ?>"
                      alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" />
+                </div>
             </a>
             <?php // Product description ?>
+            
             <div class="product-shop">
                 <div class="f-fix">
                     <div class="product-primary">
@@ -92,16 +95,16 @@
                         <?php if(!$_product->canConfigure() && $_product->isSaleable()): ?>
                             <p class="action"><button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button></p>
                         <?php elseif($_product->getStockItem() && $_product->getStockItem()->getIsInStock()): ?>
-                            <p class="action"><a title="<?php echo $this->__('View Details') ?>" class="button" href="<?php echo $_product->getProductUrl() ?>"><?php echo $this->__('View Details') ?></a></p>
+                            <p class="action"><a title="<?php echo $this->__('View Details') ?>" class="button" href="<?php echo $_product->getProductUrl() ?>"></a><span class="here"></span></p>
                         <?php else: ?>
                             <p class="action availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
                         <?php endif; ?>
                         <ul class="add-to-links">
                             <?php if ($this->helper('wishlist')->isAllow()) : ?>
-                                <li><a href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>" class="link-wishlist"><?php echo $this->__('Add to Wishlist') ?></a></li>
+                                <li><a href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>" class="link-wishlist"></a></li>
                             <?php endif; ?>
                             <?php if($_compareUrl=$this->getAddToCompareUrl($_product)): ?>
-                                <li><span class="separator">|</span> <a href="<?php echo $_compareUrl ?>" class="link-compare"><?php echo $this->__('Add to Compare') ?></a></li>
+                                <li><span class="separator">|</span> <a href="<?php echo $_compareUrl ?>" class="link-compare"></a></li>
                             <?php endif; ?>
                         </ul>
                     </div>
@@ -115,7 +118,19 @@
     <?php endforeach; ?>
     </ol>
     <script type="text/javascript">decorateList('products-list', 'none-recursive')</script>
-
+    <script type="text/javascript">
+    
+    jQuery(".product-secondary .action a.button").hover(
+        function () {
+          jQuery(".action a.button>span").addClass('icon-hover');
+        }, 
+        function () {
+          jQuery(".action a.button>span").removeClass("icon-hover");
+        }
+      
+    );
+    
+    </script>
     <?php else: ?>
 
     <?php // Grid Mode ?>
@@ -210,6 +225,15 @@
         }, 
         function () {
           jQuery(".actions ul li a.link-compare>span").removeClass("icon-hover");
+        }
+      
+    );
+    jQuery(".action a.button").hover(
+        function () {
+          jQuery(".action a.button>span").addClass('icon-hover');
+        }, 
+        function () {
+          jQuery(".action a.button>span").removeClass("icon-hover");
         }
       
     );
