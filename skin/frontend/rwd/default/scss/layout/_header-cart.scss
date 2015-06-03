@@ -34,7 +34,7 @@
 .skip-cart {
     &:not(.skip-active):hover {
         .icon {
-            background-position: -50px (-100px + ($toolbar-icon-padding-offset/2) + 1px);
+            background-position: -55px (-100px + ($toolbar-icon-padding-offset/2) + 1px);
         }
     }
 

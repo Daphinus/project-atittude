@@ -90,10 +90,13 @@ $c-blue: #3399CC;
 $c-green: #11B400;
 $c-pink: #D85378;
 $c-orange: #F3793B;
-$c-red: #CF5050;
+
+$c-red: #be0000;
 $c-yellow: #FFDD15;
 $c-black: #000000;
-$c-gray: #333333;
+$c-white: #ffffff;
+$c-gray: #5b5b5b;
+
 
 // =============================================
 // Base Colors
@@ -102,16 +105,22 @@ $c-gray: #333333;
 // Text
 
 $c-text: #636363;
-$c-text-gray: #A0A0A0;
-$c-text-white: #E6E6E6;
+
+
+$c-text-gray: #9c9292;
+$c-text-white: #FFF;
+$c-text-red:#af0100;
 // Primary font color for headings and other non-link text
-$c-text-primary: $c-blue;
+$c-text-primary: $c-gray;
+
 
 
 // Interaction
 
-$c-action: $c-blue;
-$c-stimulus: darken($c-blue, 15%);
+
+$c-action: $c-red;
+$c-stimulus: darken($c-red, 15%);
+
 $c-subtle: #A0A0A0;
 
 // Notifications
@@ -137,9 +146,11 @@ $c-divider-border: #ECECEC;
 
 // Buttons
 
-$c-button: $c-blue;
-$c-button-hover: darken($c-blue, 5%);
-$c-button-active: darken($c-blue, 10%);
+
+$c-button: $c-red;
+$c-button-hover: darken($c-red, 5%);
+$c-button-active: darken($c-red, 10%);
+
 
 // Secondary Buttons
 
@@ -152,7 +163,9 @@ $c-button-subtle: #ECECEC;
 // Forms
 
 $c-input-border: #C0C0C0;
-$c-input-border-focus: $c-blue;
+
+$c-input-border-focus: $c-red;
+
 
 $c-input-placeholder: $c-text-gray;
 $c-input-text: $c-text;
@@ -162,7 +175,9 @@ $c-fieldset-border-light: #EDEDED;
 
 // Headings
 
-$c-h1: $c-blue;
+
+$c-h1: $c-red;
+
 $c-h2: $c-text;
 $c-h3: $c-text;
 $c-h4: $c-text;
@@ -186,7 +201,9 @@ $c-module-border: #CCCCCC;
 // This should be applied whenever the border is wrapping an element with $c-module-background
 $c-module-border-light: #EDEDED;
 $c-module-border-dark: #777777;
-$c-module-border-highlight: $c-blue;
+
+$c-module-border-highlight: $c-red;
+
 
 
 // Table

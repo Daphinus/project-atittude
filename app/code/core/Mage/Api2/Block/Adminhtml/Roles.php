@@ -28,29 +28,28 @@
  * Roles grid container block
  *
  * @category   Mage
- * @package    Mage_Api2
+ * @package    Topsearches
  * @author     Magento Core Team <core@magentocommerce.com>
  */
-class Mage_Api2_Block_Adminhtml_Roles extends Mage_Adminhtml_Block_Widget_Grid_Container
-{
-    /**
-     * Construct grid container
-     */
-    public function __construct()
-    {
-        parent::__construct();
 
-        $this->_blockGroup = 'api2';
-        $this->_controller = 'adminhtml_roles';
-        $this->_headerText = Mage::helper('adminhtml')->__('REST Roles');
+class Mydons_Widgetdemo_Block_Topsearches  
+ extends Mage_Core_Block_Template  
+ implements Mage_Widget_Block_Interface 
+{ 
+ protected function _toHtml() 
+ { 
+  $searchCollection = Mage::getModel('catalogsearch/query') 
+        ->getResourceCollection() 
+        ->setOrder('popularity', 'desc'); 
+  $searchCollection->getSelect()->limit(3,0); 
+  $html = '<div id="widget-topsearches-container">' ; 
+  $html .= '<div class="widget-topsearches-title">Top Search Terms</div>'; 
 
-        //check allow edit
-        /** @var $session Mage_Admin_Model_Session */
-        $session = Mage::getSingleton('admin/session');
-        if ($session->isAllowed('system/api/roles/add')) {
-            $this->_updateButton('add', 'label', $this->__('Add Admin Role'));
-        } else {
-            $this->_removeButton('add');
-        }
-    }
+ foreach($searchCollection as $search){ 
+   $html .= '<div class="widget-topsearches-searchtext">' . $search->query_text . "</div>"; 
+  } 
+  $html .= "</div>"; 
+  return $html; 
+ } 
+
 }

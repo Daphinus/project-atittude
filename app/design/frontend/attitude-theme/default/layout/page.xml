@@ -64,6 +64,10 @@
                 <action method="addItem"><type>skin_js</type><name>js/app.js</name></action>
                 <action method="addItem"><type>skin_js</type><name>js/lib/jquery.cycle2.min.js</name></action>
                 <action method="addItem"><type>skin_js</type><name>js/lib/jquery.cycle2.swipe.min.js</name></action>
+<<<<<<< HEAD
+=======
+                <action method="addItem"><type>skin_js</type><name>js/responsive-slider/responsive-slider.min.js</name></action>
+>>>>>>> product-list
                 <action method="addItem"><type>skin_js</type><name>js/slideshow.js</name></action>
                 <action method="addItem"><type>skin_js</type><name>js/lib/imagesloaded.js</name></action>
                 <action method="addLinkRel"><rel>stylesheet</rel><href>//fonts.googleapis.com/css?family=Raleway:300,400,500,700,600</href></action>
@@ -89,7 +93,11 @@
 
             <block type="page/html_notices" name="global_notices" as="global_notices" template="page/html/notices.phtml" />
 
+<<<<<<< HEAD
             <block type="page/html_header" name="header" as="header">
+=======
+            <block type="page/html_header" name="header" as="header">               
+>>>>>>> product-list
                 <block type="page/template_links" name="top.links" as="topLinks"/>
                 <block type="page/switch" name="store_language" as="store_language" template="page/switch/languages.phtml"/>
                 <block type="core/text_list" name="top.menu" as="topMenu" translate="label">
@@ -102,7 +110,11 @@
                     <label>Page Header</label>
                     <action method="setElementClass"><value>top-container</value></action>
                 </block>
+<<<<<<< HEAD
                 <block type="page/html_welcome" name="welcome" as="welcome"/>
+=======
+                
+>>>>>>> product-list
             </block>
 
             <block type="page/html_breadcrumbs" name="breadcrumbs" as="breadcrumbs"/>
@@ -137,12 +149,20 @@
                     <action method="setElementClass"><value>bottom-container</value></action>
                 </block>
                 <block type="page/switch" name="store_switcher" as="store_switcher" after="*" template="page/switch/stores.phtml"/>
+<<<<<<< HEAD
                 <block type="page/template_links" name="footer_links" as="footer_links" template="page/template/links.phtml">
+=======
+                <!--<block type="page/template_links" name="footer_links" as="footer_links" template="page/template/links.phtml">
+>>>>>>> product-list
                     <action method="setTitle"><title>Quick Links</title></action>
                 </block>
                 <block type="page/template_links" name="footer_links2" as="footer_links2" template="page/template/links.phtml">
                     <action method="setTitle"><title>Account</title></action>
+<<<<<<< HEAD
                 </block>
+=======
+                </block>-->
+>>>>>>> product-list
                 <!-- This static block can be created and populated in admin. The footer_links cms block can be used as a starting point. -->
                 <!--<block type="cms/block" name="footer_social_links">
                     <action method="setBlockId"><block_id>footer_social_links</block_id></action>

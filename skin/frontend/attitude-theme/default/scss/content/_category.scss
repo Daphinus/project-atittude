@@ -53,7 +53,11 @@
 }
 
 .catblocks li:hover {
+<<<<<<< HEAD
     border-color: $c-module-border-highlight;
+=======
+   // border-color: $c-module-border-highlight;
+>>>>>>> product-list
 }
 
 @include bp(max-width, $bp-medium) {
@@ -84,6 +88,7 @@
     max-width: 100%;
 }
 
+<<<<<<< HEAD
 .catblocks li a span {
     color: #FFFFFF;
     position: absolute;
@@ -102,6 +107,52 @@
 
 .catblocklinks a {
     color: #FFFFFF;
+=======
+.catblocks li:before{
+    -webkit-transition: 1s ease-in-out;
+    -moz-transition: 1s ease-in-out;
+    -o-transition: 1s ease-in-out;
+    transition: 1s ease-in-out;
+}
+
+
+.catblocks li a:hover span {
+   color:$c-red;
+    
+  
+        
+    
+}
+.catblocks li a span {
+    
+      font-family: Raleway;
+  font-size: 13px;
+  color: #333;
+  text-transform: uppercase;
+  font-weight: 700;
+  position: absolute;
+  top: 50%;
+  background: #fff;
+  display: block;
+  padding: 15px 39px;
+  margin-top: -25px;
+  -webkit-transition: 1s ease-in-out;
+    -moz-transition: 1s ease-in-out;
+    -o-transition: 1s ease-in-out;
+    transition: 1s ease-in-out;
+}
+
+.catblocks li a span:hover{
+    -webkit-transform: translate(3em,0);
+    -moz-transform: translate(3em,0);
+    -o-transform: translate(3em,0);
+    -ms-transform: translate(3em,0);
+    transform: translate(3em,0);
+}
+
+.catblocklinks a {
+    //color: #FFFFFF;
+>>>>>>> product-list
     text-decoration: none
 }
 

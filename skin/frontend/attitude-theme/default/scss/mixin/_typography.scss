@@ -50,7 +50,11 @@
     font-style: normal;
     line-height: 1.2;
     text-rendering: optimizeLegibility;
+<<<<<<< HEAD
     text-transform: uppercase;
+=======
+
+>>>>>>> product-list
 }
 
 @mixin h3 {
@@ -106,12 +110,18 @@
 }
 
 @mixin pageTitle() {
+<<<<<<< HEAD
     text-transform: uppercase;
+=======
+>>>>>>> product-list
     font-size: 24px;
     font-weight: 600;
     color: $c-text;
     border-bottom: 1px solid $c-module-border-light;
     padding-bottom: 3px;
     margin-bottom: 15px;
+<<<<<<< HEAD
     text-transform: uppercase;
+=======
+>>>>>>> product-list
 }

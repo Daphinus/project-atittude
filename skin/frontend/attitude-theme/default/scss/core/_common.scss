@@ -53,7 +53,11 @@ input,
 select,
 table,
 textarea {
+<<<<<<< HEAD
     font-family: $f-stack-sans;
+=======
+    @include Roboto-Regular;
+>>>>>>> product-list
     color: $c-text;
     font-size: $f-size;
     line-height: $b-line-height;
@@ -133,13 +137,50 @@ h6, .h6 { @include h6; }
  * Page Titles
  */
 
+<<<<<<< HEAD
+=======
+.page-title{
+  border-bottom: 2px solid #ccc;
+   width:100%;
+    margin: -6px 0 17px;
+    padding-bottom: 5px;
+}
+
+>>>>>>> product-list
 .page-title h1,
 .page-title h2,
 .product-name h1,
 .product-name .h1 {
+<<<<<<< HEAD
     @include pageTitle;
 }
 
+=======
+    
+  text-align: center;
+  text-transform: uppercase;
+   margin-bottom:5px;
+  position: relative;
+  display: inline-block; 
+  font-size:20px;
+  
+  &:after{
+        position: absolute;
+  height: 2px;
+  width: 100%;
+  bottom: -15px;
+ 
+  left: 0px;
+  content: '';
+  background: #db4c52;
+  }
+    
+}
+
+
+
+
+>>>>>>> product-list
 /* -------------------------------------------- *
  * Block Module
  */
@@ -156,16 +197,23 @@ h6, .h6 { @include h6; }
 .block-title {
     position: relative;
     padding: 10px 0 0;
+<<<<<<< HEAD
     margin-bottom: 5px;
     border-top: 1px solid $c-module-border;
 
+=======
+        
+>>>>>>> product-list
     h2,
     h3,
     strong {
         @include h4;
         color: $c-text-primary;
         margin-bottom: 0;
+<<<<<<< HEAD
         text-transform: uppercase;
+=======
+>>>>>>> product-list
         font-weight: 600;
     }
     small {
@@ -228,7 +276,11 @@ body:not(.customer-account) .block:first-child .block-title {
 
 @include bp(max-width, $bp-medium) {
 
+<<<<<<< HEAD
     .sidebar {
+=======
+    .sidebar {        
+>>>>>>> product-list
         // Don't apply to layered nav, since it gets special treatment
         .block:not(.block-layered-nav) {
             margin-bottom: 0;
@@ -277,6 +329,7 @@ body:not(.customer-account) .block:first-child .block-title {
 
 .block-account,
 .block-cms-menu {
+<<<<<<< HEAD
     .block-title {
         padding-top: 0;
         border-top: none;
@@ -298,6 +351,57 @@ body:not(.customer-account) .block:first-child .block-title {
             &:hover {
                 color: $c-action;
             }
+=======
+    border-width: 1px;
+    border-style: solid;
+    border-color: $c-module-border;
+    .block-title {
+        padding-top: 0;
+        border-top: none;
+        &:after{
+            content: '';
+            position: absolute;
+            width: 30px;
+            border-top: 2px solid #be0000;
+            border-right: none;
+            border-left: none;
+            border-bottom: none;
+            top: 32px;
+            left:10px;
+        }
+    }
+
+    li {
+        font-size: 15px;
+        margin:0 10px;
+        display: block;
+        text-align: left;
+        position: relative;
+        border-bottom: 1px solid #ebebeb;
+        strong {
+            font-weight: 400;
+            color: $c-action;            
+       }
+
+        a {
+            color: $c-red;
+            padding: 10px 15px;
+            display: block;
+            &:hover {
+                color: $c-action;
+            }
+            
+        }
+        
+    }
+    .current{
+        a{
+            background:$c-red;          
+            strong{
+                color:$c-white;
+                @include RobotoCondensed-Light-Italic;
+            }
+>>>>>>> product-list
         }
     }
 }
@@ -575,13 +679,25 @@ a.button:hover {
 .breadcrumbs {
     overflow: hidden;
     margin: -15px 0 15px;
+<<<<<<< HEAD
+=======
+      font-family: "proxima";
+  background: #f4f4f4;
+  background-size: 100%;
+  line-height: 56px;
+  margin-bottom: 20px;
+>>>>>>> product-list
 }
 
 .breadcrumbs li {
     float: left;
     font-size: $f-size-xs;
+<<<<<<< HEAD
     font-family: $f-stack-special;
     text-transform: uppercase;
+=======
+    @include RobotoCondensed-Light-Italic;
+>>>>>>> product-list
 }
 
 .breadcrumbs a {
@@ -689,6 +805,10 @@ a.button:hover {
     .btn-previous {
         float: right;
         margin-left: 6px;
+<<<<<<< HEAD
+=======
+        margin-right:10px;
+>>>>>>> product-list
     }
 }
 
@@ -723,6 +843,7 @@ a.button:hover {
 /* -------------------------------------------- *
  * Container
  */
+<<<<<<< HEAD
 
 .main-container,
 .footer-container {
@@ -730,15 +851,39 @@ a.button:hover {
     max-width: $max-container-width;
     margin: 0 auto;
     padding: $trim-small;
+=======
+.main-container,
+.topbar-container,
+.footer-container {
+max-width: $max-container-width;
+}
+.main-content,
+.topbar-container,
+.main-container,
+.footer-container {
+    clear:both;
+    position: relative;    
+    margin: 0 auto;
+   
+>>>>>>> product-list
 
     &:after {
         @include clearfix;
     }
 }
+<<<<<<< HEAD
 
 @include bp(min-width, 480px) {
 
     .main-container,
+=======
+.topbar-container{
+    padding:0;
+}
+
+@include bp(min-width, 480px) {
+
+>>>>>>> product-list
     .footer-container {
         padding: $trim;
     }
@@ -1174,7 +1319,10 @@ a.button:hover {
 
 .price-box {
     margin: $element-spacing 0;
+<<<<<<< HEAD
     font-family: $f-stack-sans;
+=======
+>>>>>>> product-list
 }
 
 .price-box p {
@@ -1192,7 +1340,11 @@ a.button:hover {
 
 .price-box .price,
 .price {
+<<<<<<< HEAD
     font-family: $f-stack-sans;
+=======
+    
+>>>>>>> product-list
 }
 
 .price-box .price-label {
@@ -1453,11 +1605,20 @@ span.weee {
 
     .rating-box {
         @extend .icon-sprite;
+<<<<<<< HEAD
         width: 65px;
         height: 13px;
         background-repeat: repeat-x;
         background-position: 0 -615px;
         overflow: hidden;
+=======
+        width: 86px;
+        height: 14px;
+        background-repeat: repeat-x;
+        background-position: 0 -615px;
+        overflow: hidden;
+        margin:0 auto;
+>>>>>>> product-list
     }
     .rating-box .rating {
         @extend .icon-sprite;
@@ -1916,3 +2077,16 @@ body.customer-account .data-table {
     max-height: 50px;
     width: auto;
 }
+<<<<<<< HEAD
+=======
+
+.full{
+    width:100%;
+}
+.pull-left{
+    float:left;
+}
+.pull-right{
+    float:right;
+}
+>>>>>>> product-list

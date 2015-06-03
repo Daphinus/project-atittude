@@ -95,11 +95,22 @@ if(empty($_cartQty)) {
                             <?php echo $this->__('Checkout') ?>
                         </a>
                     </li>
+<<<<<<< HEAD
                 </ul>
             <?php endif ?>
             <a class="cart-link" href="<?php echo $this->getUrl('checkout/cart'); ?>">
                 <?php echo $this->__('View Shopping Cart'); ?>
             </a>
+=======
+                    <li>
+                        <a class="cart-link" href="<?php echo $this->getUrl('checkout/cart'); ?>">
+                            <?php echo $this->__('View Shopping Cart'); ?>
+                        </a>
+                    </li>
+                </ul>
+            <?php endif ?>
+            
+>>>>>>> product-list
         </div>
 
     <?php else: ?>

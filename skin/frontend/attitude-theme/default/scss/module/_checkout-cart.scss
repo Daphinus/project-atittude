@@ -160,7 +160,11 @@
             @include clearfix;
         }
         vertical-align: top;
+<<<<<<< HEAD
         margin: 0 0 5px 5px;
+=======
+        margin: 0 0 10px 10px;
+>>>>>>> product-list
 
         img {
             display: inline;
@@ -168,7 +172,11 @@
         }
     }
     li:first-child {
+<<<<<<< HEAD
         margin-left: 0;
+=======
+       // margin-left: 0;
+>>>>>>> product-list
     }
     /* We always want this shipping method to display on its own line */
     .method-checkout-cart-methods-multishipping {
@@ -883,7 +891,11 @@
 
 .crosssell {
     h2 {
+<<<<<<< HEAD
         color: $c-blue;
+=======
+        color: $c-gray;
+>>>>>>> product-list
     }
 
     .item a.product-image {

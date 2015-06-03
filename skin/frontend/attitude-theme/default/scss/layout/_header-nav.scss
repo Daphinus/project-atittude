@@ -30,11 +30,19 @@
 .skip-nav {
     width: 40%;
 
+<<<<<<< HEAD
     &:not(.skip-active):hover {
         text-decoration: none;
 
         .icon {
             background-position: -50px+4px ($toolbar-icon-padding-offset/2);
+=======
+    &:not(.skip-active):hover, .skip-active {
+        text-decoration: none;
+
+        .icon {
+            background-position: -55px+4px ($toolbar-icon-padding-offset/2);
+>>>>>>> product-list
         }
     }
 }
@@ -86,7 +94,10 @@
 
     #header-nav {
         display: block; /* Force visibility */
+<<<<<<< HEAD
         //border-bottom: 1px solid $c-module-border-light;
+=======
+>>>>>>> product-list
     }
 
 }
@@ -98,9 +109,16 @@
 @include bp(min-width, $bp-medium + 1) {
     .nav-primary {
         display: block;
+<<<<<<< HEAD
         margin-top: 15px;
     }
 
+=======
+        float:right;
+        //height:95px;
+        //line-height: 95px;
+    }
+>>>>>>> product-list
 }
 
 /* ============================================ *
@@ -116,15 +134,26 @@ $nav-primary-height: 30px;
         display: block;
         color: $c-text;
         line-height: $nav-primary-height;
+<<<<<<< HEAD
         font-family: $f-stack-special;
+=======
+>>>>>>> product-list
     }
 
     li {
         position: relative;
+<<<<<<< HEAD
     }
 
     li.level1 a {
         border-bottom: 1px solid $c-module-border;
+=======
+        
+    }
+
+    li.level1 a {
+        border-bottom: 1px solid $c-module-border;      
+>>>>>>> product-list
     }
 }
 
@@ -135,7 +164,11 @@ $nav-primary-height: 30px;
 }
 
 .nav-primary li.level0 > a {
+<<<<<<< HEAD
     text-transform: uppercase;
+=======
+    //text-transform: uppercase;
+>>>>>>> product-list
 }
 
 /* ============================================ *
@@ -150,6 +183,11 @@ $nav-primary-height: 30px;
         a.level0,
         a {
             line-height: $nav-primary-height + 5px;
+<<<<<<< HEAD
+=======
+            color: $c-text-red;
+            background-color:$c-white;
+>>>>>>> product-list
         }
 
         // Hide all sub-menus
@@ -159,6 +197,7 @@ $nav-primary-height: 30px;
 
         // Indent sub-menus
         li.level0 li {
+<<<<<<< HEAD
             padding: 0 0 0 25px;
         }
 
@@ -168,6 +207,19 @@ $nav-primary-height: 30px;
 
         li.parent > a:after {
             @include triangle(right, 5px, #ccc);
+=======
+            //padding: 0 0 0 25px;
+            //padding: 0 20px 0 20px;
+        }
+
+        li.level1 a {
+            padding: 0 15px 0 45px;
+            background:$c-white;
+        }
+
+        li.parent > a:after {
+            @include triangle(right, 5px, $c-text-red);
+>>>>>>> product-list
             top: 50%;
             left: 10px;
             right: auto;
@@ -177,7 +229,11 @@ $nav-primary-height: 30px;
         // Menu active states
         li.parent.sub-menu-active > a:after,
         li.parent.menu-active > a:after {
+<<<<<<< HEAD
             @include triangle(down, 5px, #ccc);
+=======
+            @include triangle(down, 5px, $c-red);
+>>>>>>> product-list
             top: 50%;
             left: 10px;
             right: auto;
@@ -195,12 +251,23 @@ $nav-primary-height: 30px;
  * Large Viewports - Dropdown Menu
  * ============================================ */
 
+<<<<<<< HEAD
 @include bp(min-width, $bp-medium + 1) {
 
     .nav-primary {
 
         a.level0 {
             padding: 0 25px;
+=======
+@include bp(min-width, $bp-medium + 1) { //desktop
+
+    .nav-primary {
+        
+        a.level0 {
+            
+            padding: 37px;
+            color:$c-red;
+>>>>>>> product-list
         }
 
         li.level0,
@@ -213,12 +280,24 @@ $nav-primary-height: 30px;
         }
 
         a:hover,
+<<<<<<< HEAD
         li:hover > a {
             color: $c-action;
         }
 
         .menu-active {
             z-index: 200;
+=======
+        li:hover > a, .active>a {
+            color: $c-text-white;
+            background:$c-red;
+            border-top:1px solid lighten($c-red, 5%);
+        }
+        
+        .menu-active {
+            z-index: 200;
+            
+>>>>>>> product-list
         }
 
         /* Default styles for 1+ drop-down menus */
@@ -226,6 +305,7 @@ $nav-primary-height: 30px;
             @include menu;
             position: absolute;
             left: 0;
+<<<<<<< HEAD
             top: $nav-primary-height; /* Height of ".nav-primary a.level0" */
             z-index: 10;
             width: 250px;
@@ -234,6 +314,17 @@ $nav-primary-height: 30px;
             display: none; /* Hide until displayed. */
         }
 
+=======
+            top: 95px; /* Height of ".nav-primary a.level0" */
+            z-index: 10;
+            width: 250px;
+            display: none; /* Hide until displayed. */
+            
+        }
+        li.level1 a{
+            padding: 0 20px;
+        }
+>>>>>>> product-list
         /* Level 2+ */
         li.level1 ul {
             left: 60px;
@@ -261,7 +352,11 @@ $nav-primary-height: 30px;
         /* Level 1+ */
         li.level0 li.parent > a {
             position: relative;
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> product-list
             &:after {
                 @include triangle(right, 4px, #ccc);
                 right: 5px;

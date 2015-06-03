@@ -54,14 +54,21 @@
         display: none;
     }
     .block-subtitle {
+<<<<<<< HEAD
         color: #50A4CF;
         font-family: $f-stack-special;
+=======
+        color: $c-gray;
+>>>>>>> product-list
         font-size: 10px;
         font-weight: bold;
         line-height: 1.4;
         padding: 5px;
         text-align: center;
+<<<<<<< HEAD
         text-transform: uppercase;
+=======
+>>>>>>> product-list
         margin-bottom: 0px;
 
         .close {
@@ -109,6 +116,7 @@
 
     .info-wrapper {
         margin-bottom: 0.5em;
+<<<<<<< HEAD
 
         th {
             text-transform: uppercase;
@@ -117,6 +125,18 @@
         td {
             color: $c-text-primary;
             clear: right;
+=======
+        margin-top:0.5em;
+        text-align:center;
+        th {
+            text-transform: uppercase;
+            //padding-right: $gap;
+            text-align:right;
+        }
+        td {
+            color: $c-text-primary;
+            //clear: right;
+>>>>>>> product-list
         }
 
         .qty-wrapper {
@@ -152,12 +172,19 @@
     }
 
     .subtotal {
+<<<<<<< HEAD
         background-color: #DDDDDD;
+=======
+>>>>>>> product-list
         text-align: center;
         line-height: 2em;
 
         .label {
+<<<<<<< HEAD
             color: white;
+=======
+            color: $c-gray;
+>>>>>>> product-list
             text-transform: uppercase;
         }
         .price {
@@ -174,11 +201,24 @@
 
         .checkout-button {
             min-width: 145px;
+<<<<<<< HEAD
         }
 
         .cart-link {
             height: 33px;
             line-height: 39px;
+=======
+            width:100%;
+        }
+
+        .cart-link {
+            display:block;
+            width:100%;
+            line-height: 30px;
+            border:1px solid $c-red;
+            height: 33px;
+            line-height: 33px;
+>>>>>>> product-list
             text-transform: uppercase;
             font-size: $f-size-s;
         }
@@ -256,9 +296,18 @@
             padding-bottom: 33px;
 
             .cart-link {
+<<<<<<< HEAD
                 bottom: 0;
                 right: $box-spacing;
                 position: absolute;
+=======
+                display:block;
+                line-height: 30px;
+                border:1px solid $c-red;
+                //bottom: 0;
+                //right: $box-spacing;
+                //position: absolute;
+>>>>>>> product-list
             }
 
             .checkout-types.minicart {
@@ -293,8 +342,13 @@
     .header-minicart {
         .minicart-actions {
             .cart-link {
+<<<<<<< HEAD
                 right: auto;
                 left: 0;
+=======
+                //right: auto;
+                //left: 0;
+>>>>>>> product-list
                 text-align: center;
                 width: 100%;
             }

@@ -24,6 +24,7 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
+
 <?php
 /**
  * Product list template
@@ -49,6 +50,9 @@
         <li class="item<?php if( ++$_iterator == sizeof($_productCollection) ): ?> last<?php endif; ?>">
             <?php // Product Image ?>
             <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image">
+
+                <div class="rollover-container" >
+
                 <?php /* Based on the native RWD styling, product images are displayed at a max of ~400px wide when viewed on a
                         one column page layout with four product columns from a 1280px viewport. For bandwidth reasons,
                         we are going to serve a 300px image, as it will look fine at 400px and most of the times, the image
@@ -59,8 +63,12 @@
                 <img id="product-collection-image-<?php echo $_product->getId(); ?>"
                      src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->keepFrame(false)->resize($_imgSize); ?>"
                      alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" />
+
+                </div>
             </a>
             <?php // Product description ?>
+            
+
             <div class="product-shop">
                 <div class="f-fix">
                     <div class="product-primary">
@@ -89,16 +97,20 @@
                         <?php if(!$_product->canConfigure() && $_product->isSaleable()): ?>
                             <p class="action"><button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button></p>
                         <?php elseif($_product->getStockItem() && $_product->getStockItem()->getIsInStock()): ?>
-                            <p class="action"><a title="<?php echo $this->__('View Details') ?>" class="button" href="<?php echo $_product->getProductUrl() ?>"><?php echo $this->__('View Details') ?></a></p>
+
+                            <p class="action"><a title="<?php echo $this->__('View Details') ?>" class="button" href="<?php echo $_product->getProductUrl() ?>"></a><span class="here"></span></p>
+
                         <?php else: ?>
                             <p class="action availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
                         <?php endif; ?>
                         <ul class="add-to-links">
                             <?php if ($this->helper('wishlist')->isAllow()) : ?>
-                                <li><a href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>" class="link-wishlist"><?php echo $this->__('Add to Wishlist') ?></a></li>
+
+                                <li><a href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>" class="link-wishlist"></a></li>
                             <?php endif; ?>
                             <?php if($_compareUrl=$this->getAddToCompareUrl($_product)): ?>
-                                <li><span class="separator">|</span> <a href="<?php echo $_compareUrl ?>" class="link-compare"><?php echo $this->__('Add to Compare') ?></a></li>
+                                <li><span class="separator">|</span> <a href="<?php echo $_compareUrl ?>" class="link-compare"></a></li>
+
                             <?php endif; ?>
                         </ul>
                     </div>
@@ -113,6 +125,20 @@
     </ol>
     <script type="text/javascript">decorateList('products-list', 'none-recursive')</script>
 
+    <script type="text/javascript">
+    
+    jQuery(".product-secondary .action a.button").hover(
+        function () {
+          jQuery(".action a.button>span").addClass('icon-hover');
+        }, 
+        function () {
+          jQuery(".action a.button>span").removeClass("icon-hover");
+        }
+      
+    );
+    
+    </script>
+
     <?php else: ?>
 
     <?php // Grid Mode ?>
@@ -123,13 +149,42 @@
         <?php $i=0; foreach ($_productCollection as $_product): ?>
             <?php /*if ($i++%$_columnCount==0): ?>
             <?php endif*/ ?>
-            <li class="item<?php if(($i-1)%$_columnCount==0): ?> first<?php elseif($i%$_columnCount==0): ?> last<?php endif; ?>">
-                <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image">
-                    <?php $_imgSize = 210; ?>
-                    <img id="product-collection-image-<?php echo $_product->getId(); ?>"
-                         src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize($_imgSize); ?>"
-                         alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" />
+
+            <li class="item<?php if(($i-1)%$_columnCount==0): ?> first<?php elseif($i%$_columnCount==0): ?> last<?php endif; ?>">              
+                <a href="<?php echo $_product->getProductUrl() ?>" class="zoom-icon zoom-icon-article" style="display: block;">
+                <?php $_imgSize = 210; ?>
+                <img id="product-collection-image-<?php echo $_product->getId(); ?>"
+                     src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize($_imgSize); ?>"
+                     alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" />
                 </a>
+                <div class="rollover-container">
+                    <div class="actions">
+                        <?php if(!$_product->canConfigure() && $_product->isSaleable()): ?>
+                            <button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span></span></button>
+                        <?php elseif($_product->getStockItem() && $_product->getStockItem()->getIsInStock()): ?>
+                            <a title="<?php echo $this->__('View Details') ?>" class="button" href="<?php echo $_product->getProductUrl() ?>" alt="<?php echo $this->__('View Details') ?>">
+                            <span class="here"></span>
+                            </a>
+                        <?php else: ?>
+                            <p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
+                        <?php endif; ?>
+                        <ul class="add-to-links">
+                            <?php if ($this->helper('wishlist')->isAllow()) : ?>
+                                <li><a href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>" class="link-wishlist" alt="<?php echo $this->__('Add to Wishlist') ?>">
+                                        <span class="here"></span></a></li>
+                            <?php endif; ?>
+                            <?php if($_compareUrl=$this->getAddToCompareUrl($_product)): ?>
+                                <li>
+                                    <a href="<?php echo $_compareUrl ?>" class="link-compare" data-test="puffOut" alt="<?php echo $this->__('Add to Compare') ?>">
+                                    <span class="here"></span>
+                                    </a>
+                                </li>
+                            <?php endif; ?>
+                        </ul>
+                    </div>
+                </div>               
+
+
                 <div class="product-info">
                     <h2 class="product-name"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></a></h2>
                     <?php
@@ -148,23 +203,8 @@
                     <?php if($_product->getRatingSummary()): ?>
                     <?php echo $this->getReviewsSummaryHtml($_product, 'short') ?>
                     <?php endif; ?>
-                    <div class="actions">
-                        <?php if(!$_product->canConfigure() && $_product->isSaleable()): ?>
-                            <button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
-                        <?php elseif($_product->getStockItem() && $_product->getStockItem()->getIsInStock()): ?>
-                            <a title="<?php echo $this->__('View Details') ?>" class="button" href="<?php echo $_product->getProductUrl() ?>"><?php echo $this->__('View Details') ?></a>
-                        <?php else: ?>
-                            <p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
-                        <?php endif; ?>
-                        <ul class="add-to-links">
-                            <?php if ($this->helper('wishlist')->isAllow()) : ?>
-                                <li><a href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>" class="link-wishlist"><?php echo $this->__('Add to Wishlist') ?></a></li>
-                            <?php endif; ?>
-                            <?php if($_compareUrl=$this->getAddToCompareUrl($_product)): ?>
-                                <li><span class="separator">|</span> <a href="<?php echo $_compareUrl ?>" class="link-compare"><?php echo $this->__('Add to Compare') ?></a></li>
-                            <?php endif; ?>
-                        </ul>
-                    </div>
+
+
                 </div>
             </li>
             <?php /*if ($i%$_columnCount==0 || $i==$_collectionSize): ?>
@@ -172,6 +212,47 @@
         <?php endforeach ?>
     </ul>
     <script type="text/javascript">decorateGeneric($$('ul.products-grid'), ['odd','even','first','last'])</script>
+
+    <script type="text/javascript">
+    jQuery(".actions a.button").hover(
+        function () {
+          jQuery(".actions a.button>span").addClass('icon-hover');
+        }, 
+        function () {
+          jQuery(".actions a.button>span").removeClass("icon-hover");
+        }
+      
+    );
+    jQuery(".actions ul li a.link-wishlist").hover(
+        function () {
+          jQuery(".actions ul li a.link-wishlist>span").addClass('icon-hover');
+        }, 
+        function () {
+          jQuery(".actions ul li a.link-wishlist>span").removeClass("icon-hover");
+        }
+      
+    );
+    jQuery(".actions ul li a.link-compare").hover(
+        function () {
+          jQuery(".actions ul li a.link-compare>span").addClass('icon-hover');
+        }, 
+        function () {
+          jQuery(".actions ul li a.link-compare>span").removeClass("icon-hover");
+        }
+      
+    );
+    jQuery(".action a.button").hover(
+        function () {
+          jQuery(".action a.button>span").addClass('icon-hover');
+        }, 
+        function () {
+          jQuery(".action a.button>span").removeClass("icon-hover");
+        }
+      
+    );
+    
+    </script>
+
     <?php endif; ?>
 
     <div class="toolbar-bottom">

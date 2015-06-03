@@ -28,6 +28,10 @@
 // =============================================
 
 @mixin menu {
+<<<<<<< HEAD
     background: #FBFBFB;
+=======
+    background: $c-white;
+>>>>>>> product-list
     border: solid 1px $c-module-border;
 }

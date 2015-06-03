@@ -26,6 +26,7 @@
 /* ============================================ *
  * Header - Cart
  * ============================================ */
+<<<<<<< HEAD
 
 /* -------------------------------------------- *
  * Skip Link - Cart
@@ -35,18 +36,53 @@
     &:not(.skip-active):hover {
         .icon {
             background-position: -50px (-100px + ($toolbar-icon-padding-offset/2) + 1px);
+=======
+.skip-cart {
+    &:not(.skip-active):hover {
+        .icon {
+            background-position: -55px (-110px + ($toolbar-icon-padding-offset/2) + 1px);
+>>>>>>> product-list
         }
     }
 
     .icon {
         @extend .icon-sprite;
+<<<<<<< HEAD
         background-position: -0px (-100px + ($toolbar-icon-padding-offset/2) + 1px);
     }
 }
+=======
+        background-position: -0px (-110px + ($toolbar-icon-padding-offset/2) + 1px);
+    }
+}
+/* -------------------------------------------- *
+ * Skip Link - Cart
+ */
+.minicart-wrapper{
+      border: 1px solid #EDEDED;
+      background:$c-white;
+      .wraper-changes{
+          text-align:center;
+          background:lighten($c-gray, 40%);
+           color:$c-white;
+          a{
+              color:$c-white;
+              line-height:40px;
+              @include RobotoCondensed-Light-Italic;
+              margin-left:10px;
+              margin-right:10px;
+          }
+      }   
+}
+.header-minicart .block-subtitle{
+    @include RobotoCondensed-Light-Italic;
+}
+>>>>>>> product-list
 
 // ---------------------------------------------
 
 @include bp(min-width, $bp-medium + 1) {
+<<<<<<< HEAD
 
     .skip-cart {
         width: auto;
@@ -66,6 +102,41 @@
         width: 320px;
         background: white;
     }
+=======
+    
+    .skip-cart {
+        width: auto;
+        color:$c-white;
+        padding: 0 10px;
+        &:not(.skip-active):hover {
+        .icon {
+            background-position: -55px (-110px + ($toolbar-icon-padding-offset/2) + 1px);
+        }
+    }
+        .icon {
+            background-position: -55px (-277px + ($toolbar-icon-padding-offset/2) + 1px);
+        }
+        
+    }
+
+    .skip-cart:hover {
+        .icon {
+            background-position: -55px (-277px + ($toolbar-icon-padding-offset/2) + 1px);
+        }
+    }
+
+    #header-cart.skip-active {
+        display: block;
+        position: absolute;
+        z-index: 200;
+        top: 42px;
+        right: 0;
+        width: 320px;
+        background: $c-text-white;
+    }
+ 
+
+>>>>>>> product-list
 
 }
 
@@ -74,6 +145,10 @@
  */
 
 .skip-cart .count {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> product-list
     @include border-radius(12px);
     display: inline-block;
     top: -6px;
@@ -82,11 +157,19 @@
     width: 22px;
     height: 22px;
     background: rgba($c-action, 0.9);
+<<<<<<< HEAD
     color: #FFFFFF;
     font-size: $f-size-xxs;
     line-height: 22px;
     text-align: center;
     font-family: $f-stack-sans;
+=======
+    color: $c-text-white;
+    font-size: $f-size-xxs;
+    line-height: 22px;
+    text-align: center;
+    left:-20px;
+>>>>>>> product-list
 }
 .skip-link.skip-active .count {
     color: white;
@@ -107,10 +190,35 @@
 }
 
 @include bp(min-width, $bp-medium + 1) {
+<<<<<<< HEAD
     .skip-cart {
         color: $c-action;
         text-transform: uppercase;
 
+=======
+    .skip-link.skip-cart,.skip-link.skip-cart:hover {
+        float: none;
+        width: auto;
+        vertical-align: top;
+        display: inline-block;
+        padding: 0 10px;
+        color:$c-white;
+        text-decoration:none;
+        height: 42px;
+        line-height: 42px;
+      .icon {
+            background-position: -55px+4px (-278px + ($toolbar-icon-padding-offset/2) + 2px);
+        }
+        .skip-active:hover, .skip-active{
+            .icon {
+                background-position: -55px+4px (-278px + ($toolbar-icon-padding-offset/2) + 2px);
+            }
+        }
+        
+    }
+    .skip-cart {
+        color:$c-white;
+>>>>>>> product-list
         &:hover {
             text-decoration: none;
         }
@@ -133,7 +241,11 @@
     }
     .skip-cart .count,
     .skip-link.skip-active .count {
+<<<<<<< HEAD
         color: $c-action;
+=======
+        //color: $c-action;
+>>>>>>> product-list
     }
 }
 
@@ -174,7 +286,10 @@
 
 .cart-menu .subtotal {
     padding: 0 15px 15px;
+<<<<<<< HEAD
     font-family: $f-stack-special;
+=======
+>>>>>>> product-list
     font-size: 24px;
     line-height: 1.2;
 }
